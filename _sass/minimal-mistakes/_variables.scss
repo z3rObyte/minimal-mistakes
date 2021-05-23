@@ -1,3 +1,4 @@
+
 /* ==========================================================================
    Variables
    ========================================================================== */
@@ -62,7 +63,7 @@ $light-gray: mix(#fff, $gray, 50%) !default;
 $lighter-gray: mix(#fff, $gray, 90%) !default;
 
 $background-color: #fff !default;
-$code-background-color: #fafafa !default; /**/
+$code-background-color: #fafafa !default;
 $code-background-color-dark: $light-gray !default;
 $text-color: $dark-gray !default;
 $muted-text-color: mix(#fff, $text-color, 20%) !default;
@@ -123,10 +124,10 @@ $notice-background-mix: 80% !default;
 $code-notice-background-mix: 90% !default;
 
 /* syntax highlighting (base16) */
-$base00: #131313!default; //modi background codes1 #3c3e3e
-$base01: #eeffff !default; //modi
-$base02: #eeffff !default; //modi
-$base03: #eeffff !default; //modi
+$base00: #263238 !default;
+$base01: #2e3c43 !default;
+$base02: #314549 !default;
+$base03: #546e7a !default;
 $base04: #b2ccd6 !default;
 $base05: #eeffff !default;
 $base06: #eeffff !default;
