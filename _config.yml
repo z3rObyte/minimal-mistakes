@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "z3r0byte"
   avatar           : "/assets/profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Penetration Testing Student | CTF Player"
+  bio              : "Penetration Testing Student / CTF Player"
   location         : "Tenerife, Canary Island"
   email            :
   links:
@@ -113,7 +113,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+        url: "https://github.com/z3rObyte" "https://github.com/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -129,7 +129,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+        url: "https://github.com/z3rObyte"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
