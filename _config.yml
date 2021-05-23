@@ -95,8 +95,8 @@ analytics:
 author:
   name             : "z3r0byte"
   avatar           : "/assets/profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Penetration Testing Student / CTF Player"
-  location         : "Tenerife, Canary Island"
+  bio              : "Penetration Testing Student & CTF Player"
+  location         : "Somewhere"
   email            :
   links:
     - label: "Email"
