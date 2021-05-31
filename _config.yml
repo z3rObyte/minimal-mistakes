@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 remote_theme             : "mmistakes/minimal-mistakes@4.23.0"
-minimal_mistakes_skin    : "neon" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
@@ -48,7 +48,7 @@ comments:
 reCaptcha:
   siteKey                :
   secret                 :
-atom_feed:
+#atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
 search                   : # true, false (default)
@@ -96,7 +96,7 @@ author:
   name             : "z3r0byte"
   avatar           : "/assets/profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Penetration Testing Student & CTF Player"
-  location         : "Somewhere"
+  location         : "En mi casa"
   email            :
   links:
     
@@ -118,7 +118,7 @@ author:
     
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/z3rObyte"
+      url: "https://github.com/z3rObyte"
     
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
@@ -135,7 +135,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/z3rObyte"
+      url: "https://github.com/z3rObyte"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
