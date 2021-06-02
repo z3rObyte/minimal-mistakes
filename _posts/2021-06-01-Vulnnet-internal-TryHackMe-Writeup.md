@@ -27,7 +27,7 @@ VulnNet: Internal es una máquina Linux de la plataforma de **TryHackMe** donde 
 # Enumeración
 ---
 
-Empezamos utilizando la utilidad ```ping``` para enviar una traza ICMP a la maquina para ver si está activa
+Empezamos utilizando la utilidad ```ping``` para enviar una traza ICMP a la máquina para ver si está activa
 
 ```bash
 $~  ping -c 1 10.10.44.60       
@@ -44,7 +44,7 @@ Como se puede ver, la máquina nos responde.
 
 Mediante el TTL se puede saber el sistema operativo de la máquina, que en este caso es Linux. 
 
-[Aquí](https://subinsb.com/default-device-ttl-values/) puedes ver como identificar el OS por el TTL. O también puedes utilizar mi herramienta [OSidentifier](https://github.com/z3rObyte/OSidentifier) 
+[Aquí](https://subinsb.com/default-device-ttl-values/) puedes consultar como identificar el OS por el TTL. O también puedes utilizar mi herramienta [OSidentifier](https://github.com/z3rObyte/OSidentifier) 
 
 
 ### Nmap
@@ -157,7 +157,7 @@ Asi que prosigo a enumerar el NFS que me ha facilitado el escaneo de ```nmap```
 
 ### NFS
 
-Utilizo ```showmount``` que es una herramienta que nos da informacion sobre monturas NFS:
+Utilizo ```showmount``` que es una herramienta que nos da información sobre monturas NFS:
 
 ```bash
 $~  showmount -e 10.10.44.60         
@@ -172,7 +172,7 @@ $~ sudo mount -t nfs 10.10.44.60:/opt/conf ./mount ; ls ./mount
  hp   init   opt   profile.d   redis   vim   wildmidi
  
 ```
-Tenemos varias carpetas donde buscar archivos críticos, podriamos ir una por una, pero yo en este caso voy a utilizar ```grep```:
+Tenemos varias carpetas donde buscar archivos críticos, podríamos ir una por una, pero yo en este caso voy a utilizar ```grep```:
 
 ```bash
 $~  grep -i -r -E "pass|user" .
@@ -205,7 +205,7 @@ $~  grep -i -r -E "pass|user" .
 ./init/lightdm.conf:	    # Single-user mode
 ```
 
-Y si teneís buen ojo, podemos ver que hemos encontrado una contraseña en el archivo redis.conf, que corresponde a un servicio que tambien esta abierto
+Y si teneís buen ojo, podemos ver que hemos encontrado una contraseña en el archivo redis.conf, que es un servicio que está corriendo actualmente en la máquina
 
 Veamos como funciona este servicio y enumeremos este para ver si contiene información útil.
 
@@ -222,7 +222,7 @@ OK
 ```
 ¡La credencial es válida!
 
-Después de googlear bastante, me encontre con un [recurso](https://book.hacktricks.xyz/pentesting/6379-pentesting-redis) bastante bueno sobre este servicio, del cual me fije para enumerarlo.
+Después de googlear bastante, me encontré con un [recurso](https://book.hacktricks.xyz/pentesting/6379-pentesting-redis) bastante bueno sobre este servicio, del cual me fijé para enumerarlo.
 
 ```bash
 
@@ -258,7 +258,7 @@ OK
 10.10.44.60:6379> 
 ```
 
-Hay varios recursos, se puede ver la flag "Internal flag" y otros archivos más. Tras ver su contenido, me doy cuenta de que el recurso "authlist" contiene una cadena de texto sospechosa encriptado en base64. Tras desencriptarlo me encuentro con una sorpresa:
+Hay varios recursos, se puede ver la flag "Internal flag" y otros archivos más. Tras inspeccionar todos los ficheros, me doy cuenta de que el recurso "authlist" contiene una cadena de texto sospechosa encriptada en base64. Tras desencriptarla me encuentro con una sorpresa:
 
 ```bash
 10.10.44.60:6379> lrange authlist 0 10
@@ -277,11 +277,11 @@ Authorization for rsync://rsync-connect@127.0.0.1 with password Hcg3HP67@TW@Bc72
 $~  
 ```
 
-Y nada más y nada menos que credenciales para el servicio rsync.
+Nada más y nada menos que credenciales para el servicio **Rsync**.
 
 Tras volver a googlear en busca de información sobre este servicio, encuentro un [recurso](https://book.hacktricks.xyz/pentesting/873-pentesting-rsync) de utilidad casualmente en la misma página que habia consultado anteriormente.
 
-Y me dispongo a enumerar el servicio rsync.
+Y me dispongo a enumerar el servicio **Rsync**.
 
 ### Rsync
 
@@ -292,7 +292,7 @@ files          	Necessary home interaction
 
 ```
 
-Un recurso compartido de nombre files, accedamos a el con nuestras credenciales a ver que encontramos:
+Un recurso compartido de nombre files, accedamos a él con nuestras credenciales a ver que encontramos:
 
 ```bash
 $~   rsync  rsync://rsync-connect@10.10.44.60/files/  
@@ -336,9 +336,11 @@ drwxr-xr-x          4,096 2021/02/01 12:53:22 Videos
 
 ```
 
-Dentro del directorio files, encontramos otro con nombre sys-internal, y ya dentro de ahi varios recursos.
+Dentro del directorio files, encontramos otro con nombre sys-internal, y ya dentro de ahí, varios recursos.
 
-Se puede ver la flag user.txt y un directorio potencial a enumerar que es ".ssh" en busca de claves SSH
+Se puede ver la flag user.txt y un directorio potencial a enumerar que es ".ssh" en busca de claves SSH.
+
+Veamos si tenemos capacidad de subida de archivos:
 
 ```bash 
 $~  > file.txt
@@ -371,9 +373,9 @@ drwxrwxr-x          4,096 2021/06/02 16:21:04 .
 $~  
 ```
 
-Aparte de enumerarlo, pruebo a ver si tenemos la capacidad de subir archivos, y si, disponemos de ella.
+Y sí, disponemos de capacidad de subir archivos
 
-Después de esto, tenemos acceso asegurado, creando un par de **claves ssh** y subiendo el _id_rsa.pub_ al servidor como _authorized_keys_, podremos conectarnos sin necesidad de ingresar contraseña por SSH.
+Después de esto, tenemos acceso asegurado, creando un par de **claves ssh** y subiendo el _id_rsa.pub_ al servidor como _authorized_keys_, podremos conectarnos al SSH sin necesidad de ingresar contraseña.
 
 ```bash
 $~  ssh-keygen
@@ -435,11 +437,11 @@ applicable law.
 
 sys-internal@vulnnet-internal:~$ 
 ```
-¡Y hemos conseguido shell! ¡por el root!
+¡Y hemos conseguido shell! ¡Ahora a por el root!
 
 # Escalada de Privilegios
 
-Tras enumerar el sistema, me doy cuenta de que hay un directorio en la raiz que no viene por defecto.
+Tras enumerar el sistema, me doy cuenta de que hay un directorio en la raíz que no viene por defecto.
 
 Lo enumero y me encuentro lo siguiente:
 
@@ -473,9 +475,9 @@ For licensing information, see the "licenses" directory.
 More information:
 TeamCity documentation: https://www.jetbrains.com/help/teamcity/teamcity-documentation.html
 ```
-Nos encontramos con algun tipo de servicio web que está corriendo en la máquina.
+Nos encontramos con algún tipo de servicio web que está corriendo en la máquina.
 
-El readme.txt nos dice que en sistemas linux el servicio corre en el puerto 8111
+El readme.txt nos dice que en sistemas Linux, el servicio corre por defecto en el puerto 8111.
 
 ```bash
 sys-internal@vulnnet-internal:/TeamCity$ ss | grep "8111"
@@ -488,7 +490,7 @@ sys-internal@vulnnet-internal:/TeamCity$
 ```
 Y vemos que sí, el servicio esta corriendo en el puerto 8111.
 
-Entonces, se me ocurre hacer un **Port Forwarding** para que el puerto 8111 de la maquina equivalga al puerto 8111 de mi equipo, esto para poder acceder a este servicio web a través de mi navegador
+Entonces, se me ocurre hacer un **Port Forwarding** para que el puerto 8111 de la maquina equivalga al puerto 8111 de mi equipo, esto para poder acceder a este servicio web a través de mi navegador.
 
 ```bash
 $~  sudo ssh -i id_rsa sys-internal@10.10.44.60 -L 8111:127.0.0.1:8111
@@ -524,7 +526,7 @@ Ya después de esto, puedo ver el servicio desde mi navegador:
 
 Vemos un panel de inicio de sesión. 
 
-Me interesa la opcion de **ingresar como super usuario** asi que clicko ahí:
+Me interesa la opcion de **ingresar como super usuario** asi que clico ahí:
 
 
 
@@ -559,13 +561,13 @@ Me encuentro con esto.
 
 Tras hacer un gesto de celebración, pruebo cada uno de estos tokens para ver si funcionan.
 
-Y sí funciona uno de ellos y consigo acceder al panel de administracion de este servicio web
+Funciona uno de ellos y consigo acceder al panel de administracion de este servicio web:
 
 
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador3.png">
 
 
-Clico en el boton de _create a new project_ y luego en _Manually_ y sale lo siguiente:
+Clico en el botón de _create a new project_ y luego en _Manually_ y sale lo siguiente:
 
 
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador4.png">
@@ -588,16 +590,16 @@ Nos deberia aparecer esto:
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador6.png">
 
 
-Aqui clickais arriba donde pone _root project_
+Aqui clicais arriba donde pone _root project_.
 
-Abajo debería de aparecer el nombre de vuestro proyecto, le damos ahí
+Abajo debería de aparecer el nombre de vuestro proyecto, le damos ahí.
 
-Y tiene que salir lo siguiente
+Y tiene que salir lo siguiente:
 
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador7.png">
 
 
-A continuacion le damos click al nombre que que le habeis puesto al _build configuration_
+A continuación, le damos click al nombre que que le habeis puesto al _build configuration_.
 
 Que en este caso el mio es "No se lo digas a nadie"
 
@@ -605,13 +607,13 @@ Que en este caso el mio es "No se lo digas a nadie"
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador8.png">
 
 
-Luego de esto, hacemos click en la izquierda donde pone _build steps_
+Luego de esto, hacemos click en la izquierda donde pone _build steps_.
 
-Y le damos a _Add build steps_
+Y le damos a _Add build steps_.
 
 Ahora debería pedir que elijamos un lenguaje de programación.
 
-En mi caso voy a elegir _Command Line_
+En mi caso voy a elegir _Command Line_.
 
 
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador9.png">
@@ -627,7 +629,7 @@ El script quedaria tal que así:
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador10.png">
 
 
-Luego de esto practicamente ya está, hacemos click arriba en _run_ y la /bin/bash de la maquina tendria permisos SUID
+Luego de esto practicamente ya está, hacemos click arriba en _run_ y la /bin/bash de la máquina tendria permisos SUID
 
 Lo que se traduce en que nos podemos convertir en usuario root
 
@@ -644,7 +646,10 @@ Y ya estaría
 
 # Opinión
 
-Me ha parecido una muy buena máquina, donde he aprendido sobre varios servicios que desconocía. Esta máquina de verdad ha puesto a prueba mis habilidades
-de búsqueda y paciencia ya que he tenido que googlear mucho para encontrar informacion sobre los servicios.
+Me ha parecido una muy buena máquina, donde he aprendido sobre varios servicios que desconocía.
+
+Esta máquina de verdad ha puesto a prueba mis habilidades de búsqueda y paciencia ya que he tenido que googlear mucho para encontrar la informacin sobre los servicios.
+
+Máquina recomendable. [Link](https://tryhackme.com/room/vulnnetinternal) a VulnNet: Internal
 
 
