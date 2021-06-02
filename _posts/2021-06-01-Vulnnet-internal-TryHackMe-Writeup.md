@@ -517,9 +517,9 @@ sys-internal@vulnnet-internal:~$
 Ya después de esto, puedo ver el servicio desde mi navegador:
 
 
-<p align="center">
+
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador1.png">
-</p>
+
 
 
 Vemos un panel de inicio de sesión. 
@@ -527,9 +527,8 @@ Vemos un panel de inicio de sesión.
 Me interesa la opcion de **ingresar como super usuario** asi que clicko ahí:
 
 
-<p align="center">
+
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador2.png">
-</p>
 
 
 Y vemos que nos pide un token de autenticación.
@@ -563,23 +562,21 @@ Tras hacer un gesto de celebración, pruebo cada uno de estos tokens para ver si
 Y sí funciona uno de ellos y consigo acceder al panel de administracion de este servicio web
 
 
-<p align="center">
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador3.png">
-</p>
+
 
 Clico en el boton de _create a new project_ y luego en _Manually_ y sale lo siguiente:
 
-<p align="center">
+
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador4.png">
-</p>
+
 
 Le pongo un nombre al proyecto y le doy a _create_
 
 Y se muestra lo siguiente:
 
-<p align="center">
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador5.png">
-</p>
+
 
 Después de esto, le damos a _Create Build Configuration_ 
 
@@ -588,9 +585,8 @@ Ahi ponemos otro nombre (da igual cual) y le damos a _create_
 Nos deberia aparecer esto:
 
 
-<p align="center">
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador6.png">
-</p>
+
 
 Aqui clickais arriba donde pone _root project_
 
@@ -598,17 +594,16 @@ Abajo debería de aparecer el nombre de vuestro proyecto, le damos ahí
 
 Y tiene que salir lo siguiente
 
-<p align="center">
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador7.png">
-</p>
+
 
 A continuacion le damos click al nombre que que le habeis puesto al _build configuration_
 
 Que en este caso el mio es "No se lo digas a nadie"
 
-<p align="center">
+
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador8.png">
-</p>
+
 
 Luego de esto, hacemos click en la izquierda donde pone _build steps_
 
@@ -618,9 +613,9 @@ Ahora debería pedir que elijamos un lenguaje de programación.
 
 En mi caso voy a elegir _Command Line_
 
-p align="center">
+
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador9.png">
-</p>
+
 
 Despues de elegir el lenguaje, nos saldra una pestaña donde podremos hacer un script
 
@@ -629,9 +624,7 @@ Como yo he elegido la linea de comandos como lenguaje, voy a hacer un script que
 El script quedaria tal que así:
 
 
-p align="center">
 <img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador10.png">
-</p>
 
 
 Luego de esto practicamente ya está, hacemos click arriba en _run_ y la /bin/bash de la maquina tendria permisos SUID
