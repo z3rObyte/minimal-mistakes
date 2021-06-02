@@ -518,7 +518,7 @@ Ya después de esto, puedo ver el servicio desde mi navegador:
 
 
 <p align="center">
-<img src="https://github.com/z3rObyte/z3rObyte.github.io/blob/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador1.png">
+<img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador1.png">
 </p>
 
 
@@ -528,7 +528,7 @@ Me interesa la opcion de **ingresar como super usuario** asi que clicko ahí:
 
 
 <p align="center">
-<img src="https://github.com/z3rObyte/z3rObyte.github.io/blob/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador2.png">
+<img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador2.png">
 </p>
 
 
@@ -564,13 +564,13 @@ Y sí funciona uno de ellos y consigo acceder al panel de administracion de este
 
 
 <p align="center">
-<img src="https://github.com/z3rObyte/z3rObyte.github.io/blob/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador3.png">
+<img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador3.png">
 </p>
 
 Clico en el boton de _create a new project_ y luego en _Manually_ y sale lo siguiente:
 
 <p align="center">
-<img src="https://github.com/z3rObyte/z3rObyte.github.io/blob/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador4.png">
+<img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador4.png">
 </p>
 
 Le pongo un nombre al proyecto y le doy a _create_
@@ -578,7 +578,7 @@ Le pongo un nombre al proyecto y le doy a _create_
 Y se muestra lo siguiente:
 
 <p align="center">
-<img src="https://github.com/z3rObyte/z3rObyte.github.io/blob/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador5.png">
+<img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador5.png">
 </p>
 
 Después de esto, le damos a _Create Build Configuration_ 
@@ -589,7 +589,7 @@ Nos deberia aparecer esto:
 
 
 <p align="center">
-<img src="https://github.com/z3rObyte/z3rObyte.github.io/blob/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador6.png">
+<img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador6.png">
 </p>
 
 Aqui clickais arriba donde pone _root project_
@@ -599,7 +599,7 @@ Abajo debería de aparecer el nombre de vuestro proyecto, le damos ahí
 Y tiene que salir lo siguiente
 
 <p align="center">
-<img src="https://github.com/z3rObyte/z3rObyte.github.io/blob/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador7.png">
+<img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador7.png">
 </p>
 
 A continuacion le damos click al nombre que que le habeis puesto al _build configuration_
@@ -607,7 +607,7 @@ A continuacion le damos click al nombre que que le habeis puesto al _build confi
 Que en este caso el mio es "No se lo digas a nadie"
 
 <p align="center">
-<img src="https://github.com/z3rObyte/z3rObyte.github.io/blob/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador8.png">
+<img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador8.png">
 </p>
 
 Luego de esto, hacemos click en la izquierda donde pone _build steps_
@@ -619,7 +619,7 @@ Ahora debería pedir que elijamos un lenguaje de programación.
 En mi caso voy a elegir _Command Line_
 
 p align="center">
-<img src="https://github.com/z3rObyte/z3rObyte.github.io/blob/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador9.png">
+<img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador9.png">
 </p>
 
 Despues de elegir el lenguaje, nos saldra una pestaña donde podremos hacer un script
@@ -630,7 +630,7 @@ El script quedaria tal que así:
 
 
 p align="center">
-<img src="https://github.com/z3rObyte/z3rObyte.github.io/blob/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador10.png">
+<img src="https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/VulnNet-internal-Tryhackme/images/Navegador10.png">
 </p>
 
 
