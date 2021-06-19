@@ -648,7 +648,7 @@ Y ya estaría
 
 Me ha parecido una muy buena máquina, donde he aprendido sobre varios servicios que desconocía.
 
-Esta máquina de verdad ha puesto a prueba mis habilidades de búsqueda y paciencia ya que he tenido que googlear mucho para encontrar la informacin sobre los servicios.
+Esta máquina de verdad ha puesto a prueba mis habilidades de búsqueda y paciencia ya que he tenido que googlear mucho para encontrar la información sobre los servicios.
 
 Máquina recomendable. [Link](https://tryhackme.com/room/vulnnetinternal) a VulnNet: Internal
 
