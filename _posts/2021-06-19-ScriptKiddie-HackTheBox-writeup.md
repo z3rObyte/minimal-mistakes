@@ -236,7 +236,8 @@ Si no se pone el comentario del final, no te llegará la reverse shell.
 
 Una vez nos llega la shell, estamos como el usuario pwn.
 
-```bashpwn@scriptkiddie:~$ id
+```bash
+pwn@scriptkiddie:~$ id
 uid=1001(pwn) gid=1001(pwn) groups=1001(pwn)
 pwn@scriptkiddie:~$
 ```
