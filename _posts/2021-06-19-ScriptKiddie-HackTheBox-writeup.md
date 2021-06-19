@@ -271,7 +271,7 @@ pwn@scriptkiddie:~$ sudo -u root /opt/metasploit-framework-6.0.9/msfconsole
 + -- --=[ 592 payloads - 45 encoders - 10 nops            ]
 + -- --=[ 7 evasion                                       ]
 
-Metasploit tip: View a module's description using info, or the enhanced version in your browser with info -d
+Metasploit tip: View a modules description using info, or the enhanced version in your browser with info -d
 
 msf6 > /bin/bash
 [*] exec: /bin/bash
