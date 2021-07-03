@@ -5,9 +5,9 @@ excerpt:
 show_date: true
 classes: wide
 header:
-  teaser: "![teaser](https://user-images.githubusercontent.com/67548295/124353452-25f23480-dbf6-11eb-9623-1cb0d9205099.png)"
+  teaser: "https://user-images.githubusercontent.com/67548295/124353452-25f23480-dbf6-11eb-9623-1cb0d9205099.png"
   teaser_home_page: true
-  icon: "![icono](assets/images/icons/HackTheBox-icon.png)"
+  icon: "assets/images/icons/HackTheBox-icon.png"
 categories:
   - Writeup
   - HackTheBox
