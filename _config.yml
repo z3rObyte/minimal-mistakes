@@ -124,7 +124,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
       
-    - label: "Paypal"
+    - label: "Donar"
       icon: "fab fa-fw fa-paypal"
       url: "https://paypal.me/z3r0byte"
 
