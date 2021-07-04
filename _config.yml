@@ -123,6 +123,10 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+      
+    - label: "Paypal"
+      icon: "fab fa-fw fa-paypal"
+      url: "https://paypal.me/z3r0byte"
 
 # Site Footer
 footer:
