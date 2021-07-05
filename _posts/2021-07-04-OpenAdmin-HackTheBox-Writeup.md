@@ -17,7 +17,7 @@ tags:
   - sudo
 ---
 
-![titulo](https://user-images.githubusercontent.com/67548295/124387610-cae04080-dcce-11eb-932a-6940d389c173.jpeg)
+![título](https://user-images.githubusercontent.com/67548295/124387610-cae04080-dcce-11eb-932a-6940d389c173.jpeg)
 
 
 # Enumeración
