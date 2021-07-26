@@ -5,7 +5,7 @@ excerpt:
 show_date: true
 classes: wide
 header:
-  teaser: "https://raw.githubusercontent.com/z3rObyte/z3rObyte.github.io/master/assets/images/ScriptKiddie-HackTheBox/teaser.png"
+  teaser: "https://user-images.githubusercontent.com/67548295/126992857-306ecf51-ec41-485f-88cf-de8c58fa5038.png"
   teaser_home_page: true
   icon: "assets/images/icons/HackTheBox-icon.png"
 categories:
