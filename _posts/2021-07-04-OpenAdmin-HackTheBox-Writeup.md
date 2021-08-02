@@ -1,7 +1,7 @@
 ---
 title: "OpenAdmin - HTB Writeup"
 layout: single
-excerpt:
+excerpt: "OpenAdmin es una máquina de dificultad fácil de HackTheBox. Se obtiene acceso a la máquina mediante una versión vulnerable a RCE del software OpenNetAdmin. La escalada de privilegios es a través de varios usuarios para al final convertirte en root abusando de un permiso de sudoers donde se permitia ejecutar _Nano_ como superusario."
 show_date: true
 classes: wide
 header:
