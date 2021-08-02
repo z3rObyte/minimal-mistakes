@@ -1,5 +1,4 @@
 ---
-title: "VulnNet: Internal - THM Writeup"
 layout: single
 excerpt: "Vulnnet Internal es una maquina donde se explotan diferentes servicio como _samba_, _Redis_, _Rsync_, para luego escalar privilegios mediante otro servicio que esta ejecutandose internamente en la maquina con permisos de superusuario, accediendo a el mediante un port forwarding.
 show_date: true
