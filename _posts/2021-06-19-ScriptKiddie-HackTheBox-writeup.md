@@ -1,7 +1,7 @@
 ---
 title: "ScriptKiddie - HTB Writeup"
 layout: single
-excerpt:
+excerpt: "ScriptKiddie es una máquina de HackTheBox de dificultad fácil, en la que se explota una vulnerabilidad de msfvenom para conseguir acceso a la máquina. Se obtiene el usuario root abusando de un privilegio de sudoers que nos permite ejecutar la herramienta metasploit como superusuario."
 show_date: true
 classes: wide
 header:
