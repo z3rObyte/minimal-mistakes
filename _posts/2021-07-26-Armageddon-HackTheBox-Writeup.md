@@ -1,7 +1,7 @@
 ---
 title: "Armageddon - HTB Writeup"
 layout: single
-excerpt:
+excerpt: "Armageddon es una máquina de nivel fácil de HackTheBox. En esta maquina nos aprovechamos de una vulnerabilidad del gestor de contenidos Drupal. Para la escalada de privilegios nos aprovechamos de un permiso de sudoers que nos permite ejecutar snap como superusuario, creamos un paquete de instalacion malicioso y conseguimos convertirnos en root."
 show_date: true
 classes: wide
 header:
