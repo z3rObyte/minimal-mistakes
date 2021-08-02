@@ -1,7 +1,7 @@
 ---
 title: "Shocker - HTB Writeup"
 layout: single
-excerpt: "Shocker es una máquina de dificultad fácil de HacktheBox. Como el nombre de la máquina indica, se obtiene acceso a la máquina mediante la vulnerabilidad shellshock, para luego escalar privilegios abusando de un privilegio de sudoers que permite ejecutar perl como usuario root."
+excerpt: "Shocker es una máquina de dificultad fácil de HackTheBox. Como el nombre de la máquina indica, se obtiene acceso a la máquina mediante la vulnerabilidad shellshock, para luego escalar privilegios abusando de un privilegio de sudoers que permite ejecutar perl como usuario root."
 show_date: true
 classes: wide
 header:
