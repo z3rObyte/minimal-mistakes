@@ -1,7 +1,7 @@
 ---
 title: "Love - HTB Writeup"
 layout: single
-excerpt: "Love es una máquina de nivel fácil de HackTheBox."
+excerpt: "Love es una máquina de nivel fácil de HackTheBox. En esta máquina explotamos un SSRF y hacemos uso de un exploit para obtener acceso a la máquina. Hacemos uso del permiso habilitado AlwaysInstallElevated para escalar privilegios a través de un paquete de instalación malicioso."
 show_date: true
 classes: wide
 header:
@@ -12,9 +12,9 @@ categories:
   - Writeup
   - HackTheBox
 tags:
-  - JWT
-  - Misconfiguration
-  - Docker
+  - SSRF
+  - RCE
+  - AlwaysInstallElevated
 ---
 
 ![titulo](https://user-images.githubusercontent.com/67548295/128862771-30d57757-e49d-46a1-857c-fbe6f2d0e447.png)
@@ -374,23 +374,3 @@ b85553d0fXXXXXXXXXXXXXXXXXXXXXXXXXXXX71
 Hemos explotado una vulnerabilidad de tipo SSRF para acceder a un recurso no accesible desde fuera, ahí hemos encontrado unas credenciales que hemos utilizado para 
 acceder al panel de administración del sistema de votación, ya estando aquí, utilizamos un exploit para poder conseguir ejecución remota de comandos con la que nos hemos metido
 al sistema, por último nos hemos aprovechado de un registro que nos permitía instalar paquetes como administrador para conseguir escalar privilegios.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
