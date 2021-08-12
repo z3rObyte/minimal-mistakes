@@ -33,7 +33,7 @@ PING 10.10.10.3 (10.10.10.3) 56(84) bytes of data.
 rtt min/avg/max/mdev = 203.041/203.041/203.041/0.000 ms
 ```
 | Parámetro | Acción |
-|:----------|:------:|
+|:---------:|:------:|
 | `-c 1` | elegimos que solo queremos enviar 1 traza |
 
 Podemos observar que la máquina está activa y que observando el TTL, concluimos que es una máquina Linux.
@@ -119,7 +119,7 @@ Nmap done: 1 IP address (1 host up) scanned in 288.06 seconds
            Raw packets sent: 131238 (5.774MB) | Rcvd: 181 (7.948KB)
 ```
 | Parámetro | Acción |
-|:----------|:------:|
+|:---------:|:------:|
 | `-p-` | Es una forma de especificar que queremos escanear todos los puertos existentes, los 65535 |
 | `--open` | Este parámetro hace que nos muestre únicamente los puertos abiertos, que nos omita los filtered |
 | `-sS` | Especificamos el tipo de escaneo 'SYN port Scan', que es más rápido y sigiloso que el tipo de escaneo por defecto |
