@@ -32,6 +32,7 @@ PING 10.10.10.3 (10.10.10.3) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 203.041/203.041/203.041/0.000 ms
 ```
+
 | Parámetro | Acción |
 |:---------:|:------:|
 | `-c 1` | elegimos que solo queremos enviar 1 traza |
@@ -118,6 +119,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 288.06 seconds
            Raw packets sent: 131238 (5.774MB) | Rcvd: 181 (7.948KB)
 ```
+
 | Parámetro | Acción |
 |:---------:|:------:|
 | `-p-` | Es una forma de especificar que queremos escanear todos los puertos existentes, los 65535 |
