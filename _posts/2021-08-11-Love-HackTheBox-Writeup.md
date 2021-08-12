@@ -37,7 +37,7 @@ rtt min/avg/max/mdev = 71.771/71.771/71.771/0.000 ms
 |:----------|:------:|
 | `-c 1` | elegimos que solo queremos enviar 1 traza |
 
-Podemos observar que la máquina está activa y que observando el TTL, concluimos que es una máquina Linux.
+Podemos observar que la máquina está activa y que observando el TTL, concluimos que es una máquina Windows.
 
 Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/).
 
