@@ -83,15 +83,15 @@ Raw packets sent: 65548 (2.884MB) | Rcvd: 65545 (2.622MB)
 ```
 | Parámetro | Acción |
 |:---------:|:------:|
-| `-p-` | Es una forma de especificar que queremos escanear todos los puertos existentes, los 65535 |
-| `--open` | Este parámetro hace que nos muestre únicamente los puertos abiertos, que nos omita los filtered |
-| `-sS` | Especificamos el tipo de escaneo 'SYN port Scan', que es más rápido y sigiloso que el tipo de escaneo por defecto |
-| `--min-rate [valor]` | envía paquetes tan o más rápido que la tasa dada |
-| `-v` | Especifica que queremos más 'verbose', es decir, que nos muestre mas información de la convencional |
-| `-n` | Quitamos la resolución DNS para que el escaneo vaya más rápido |
-| `-sC` | Utiliza un escaneo con una serie de scripts por defecto de nmap |
+| `-p-` | Es una forma de especificar que queremos escanear todos los puertos existentes, los 65535. |
+| `--open` | Este parámetro hace que nos muestre únicamente los puertos abiertos, que nos omita los filtered. |
+| `-sS` | Especificamos el tipo de escaneo 'SYN port Scan', que es más rápido y sigiloso que el tipo de escaneo por defecto. |
+| `--min-rate [valor]` | envía paquetes tan o más rápido que la tasa dada. |
+| `-v` | Especifica que queremos más 'verbose', es decir, que nos muestre mas información de la convencional. |
+| `-n` | Quitamos la resolución DNS para que el escaneo vaya más rápido. |
+| `-sC` | Utiliza un escaneo con una serie de scripts por defecto de nmap. |
 | `-sV` | Activa la detección de versiones. |
-| `-oN [nombre de archivo]` | Exporta los resultados en formato normal, tal cual se ve en el escaneo |
+| `-oN [nombre de archivo]` | Exporta los resultados en formato normal, tal cual se ve en el escaneo. |
 
 y vemos que solo hay un puerto abierto:
 
@@ -122,9 +122,9 @@ Nmap done: 1 IP address (1 host up) scanned in 6.72 seconds
 ```
 | Parámetro | Acción |
 |:---------:|:------:|
-| `--script http-enum` | Indicamos que queremos utilizar el script http-enum |
-| `-p80` | Indicamos que queremos hacer acciones únicamente con el puerto 80 del host |
-| `-oN [Nombre de archivo]` | Exporta los resultados en formato normal, tal cual se ve en el escaneo |
+| `--script http-enum` | Indicamos que queremos utilizar el script http-enum. |
+| `-p80` | Indicamos que queremos hacer acciones únicamente con el puerto 80 del host. |
+| `-oN [Nombre de archivo]` | Exporta los resultados en formato normal, tal cual se ve en el escaneo. |
 
 # User.txt
 
