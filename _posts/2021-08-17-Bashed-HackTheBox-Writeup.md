@@ -81,6 +81,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 24.54 seconds
 Raw packets sent: 65548 (2.884MB) | Rcvd: 65545 (2.622MB)
 ```
+
 | Parámetro | Acción |
 |:---------:|:------:|
 | `-p-` | Es una forma de especificar que queremos escanear todos los puertos existentes, los 65535. |
@@ -120,6 +121,7 @@ PORT   STATE SERVICE
 
 Nmap done: 1 IP address (1 host up) scanned in 6.72 seconds
 ```
+
 | Parámetro | Acción |
 |:---------:|:------:|
 | `--script http-enum` | Indicamos que queremos utilizar el script http-enum. |
@@ -178,6 +180,7 @@ Matching Defaults entries for www-data on bashed:
 User www-data may run the following commands on bashed:
     (scriptmanager : scriptmanager) NOPASSWD: ALL
 ```
+
 | Parámetro | Acción |
 |:---------:|:------:|
 | `-l` | listamos los comandos permitidos y prohibidos para ejecutar como otro usuario |
@@ -189,6 +192,7 @@ bash-4.3$ sudo -u scriptmanager /bin/bash
 bash-4.3$ whoami
 scriptmanager
 ```
+
 | Parámetro | Acción |
 |:---------:|:------:|
 | `-u [comando]` | Especificamos el usuario con el cual se ejecutará el comando|
@@ -208,6 +212,7 @@ bash-4.3$ find / -user scriptmanager 2>/dev/null | grep -v "proc"
 /home/scriptmanager/.bash_history
 /home/scriptmanager/.bash_logout
 ```
+
 | Parámetro | Acción |
 |:---------:|:------:|
 | `/` | Queremos hacer la busqueda recursiva desde la raiz (en todo el sistema) |
