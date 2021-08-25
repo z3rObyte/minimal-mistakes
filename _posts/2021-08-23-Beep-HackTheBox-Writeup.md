@@ -14,7 +14,7 @@ categories:
 tags:
   - LFI
   - Shellshock
-  - Asterisk
+  - Elastix
   - Linux
 ---
 
