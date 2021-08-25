@@ -20,9 +20,6 @@ tags:
 
 ![titulomaquina](https://user-images.githubusercontent.com/67548295/130441416-5386c028-bbd3-43de-a562-8e3c55f9affe.png)
 
-
-# Enumeración
-
 # Enumeración
 
 Comenzamos como siempre, enviando una traza por ICMP para ver si la máquina se encuentra activa y para identificar el OS:
