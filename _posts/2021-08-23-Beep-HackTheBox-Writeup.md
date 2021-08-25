@@ -171,9 +171,7 @@ Bueno, siguiendo con la enumeración me dispongo a visitar la web:
 
 Vemos un panel de login del servicio [Elastix](https://www.elastix.org/)
 
-Si buscamos lo que es [PBX](https://www.cisco.com/c/es_mx/solutions/small-business/resource-center/collaboration/what-is-a-pbx.html), vemos que es el responsable de las molestas redirecciones de llamada
-
-de cuando contactamos con empresas de telefono o similares, no solo esto, tambien tiene más funciones que te dejo que investigues.
+Si buscamos lo que es [PBX](https://www.cisco.com/c/es_mx/solutions/small-business/resource-center/collaboration/what-is-a-pbx.html), vemos que es el responsable de las molestas redirecciones de llamada de cuando contactamos con empresas de telefono o similares, no solo esto, tambien tiene más funciones que te dejo que investigues.
 
 ---
 
