@@ -125,7 +125,7 @@ PORT      STATE SERVICE    VERSION
 |_http-favicon: Unknown favicon MD5: 74F7F6F633A027FA3EA36F05004C9341
 | http-methods: 
 |_  Supported Methods: GET HEAD POST OPTIONS
-|_http-title: Site doesn't have a title (text/html; Charset=iso-8859-1).
+|_http-title: Site doesnt have a title (text/html; Charset=iso-8859-1).
 Service Info: Hosts:  beep.localdomain, 127.0.0.1, example.com, localhost; OS: Unix
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
@@ -245,7 +245,7 @@ Obtenemos este error, pero es fácil de solucionar, solamente añadimos este par
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
 └──╼ $ssh -oKexAlgorithms=+diffie-hellman-group-exchange-sha1 admin@10.10.10.7
-admin@10.10.10.7's password: 
+admin@10.10.10.7 password: 
 Permission denied, please try again.
 admin@10.10.10.7's password: 
 ```
@@ -257,7 +257,7 @@ Pruebo a intentar acceder con usuario `root` en lugar de con `admin`:
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
 └──╼ $ssh -oKexAlgorithms=+diffie-hellman-group-exchange-sha1 root@10.10.10.7
-root@10.10.10.7's password: 
+root@10.10.10.7 password: 
 Last login: Tue Jul 16 11:45:47 2019
 
 Welcome to Elastix 
