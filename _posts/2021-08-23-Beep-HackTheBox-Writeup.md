@@ -276,9 +276,9 @@ Y logramos acceder!
 
 # Resumen y autopwn
 
-En esta máquina hemos explotado dos formas distintas para rootear la máquina, un [shellshock](https://es.wikipedia.org/wiki/Shellshock_%28error_de_software%29) y
-un [LFI](https://www.welivesecurity.com/la-es/2015/01/12/como-funciona-vulnerabilidad-local-file-inclusion/). Ambas formas accediendo directamente como root.
-He desarrollado un script autopwn que te proporciona una shell como root en la máquina tras ejecutarlo, está disponible en mi [GitHub](https://github.com/z3rObyte/HackTheBox-Autopwn)
+En esta máquina hemos explotado dos formas distintas de acceder, una con un[shellshock](https://es.wikipedia.org/wiki/Shellshock_%28error_de_software%29) y
+la otra con un [LFI](https://www.welivesecurity.com/la-es/2015/01/12/como-funciona-vulnerabilidad-local-file-inclusion/). Ambas formas accediendo directamente como root.
+También he desarrollado un script autopwn que te proporciona una shell como root en la máquina tras ejecutarlo, está disponible en mi [GitHub](https://github.com/z3rObyte/HackTheBox-Autopwn)
 
 
 
