@@ -45,7 +45,7 @@ Más información sobre la detección de OS mediante TTL [aquí](https://subinsb
 
 También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier).
 
-# Nmap
+## Nmap
 
 Comenzamos la fase de enumeración de puertos con `nmap`:
 
