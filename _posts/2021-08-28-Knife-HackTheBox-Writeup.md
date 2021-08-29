@@ -202,7 +202,7 @@ Ya a partir de aquí podríamos ver la flag `root.txt` en el directorio /root/ro
 4XXXXXXXXXXXXXXXXXXXXXXXXX1cba
 ```
 
-# Resumen
+# Resumen y autopwn
 
 En esta máquina hemos explotado una versión de PHP que venía con un backdoor, podíamos ejecutar comandos de forma remota a través de una cabecera modificada.
-En la escalada de privilegios hemos abusado de un binario que podíamos ejecutar como root gracias a un permiso de sudoers.
+En la escalada de privilegios hemos abusado de un binario que podíamos ejecutar como root gracias a un permiso de sudoers. Tambien he creado un script autopwn que te da una shell como root tras ejecutarlo, lo tienes disponible en mi [GitHub](https://github.com/z3rObyte/HackTheBox-Autopwn/blob/main/Knife-autoPWN.py)
