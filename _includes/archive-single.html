@@ -17,7 +17,7 @@
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
       {% else %}
         <a href="{{ post.url | relative_url }}" rel="permalink" style="text-decoration:none">{{ title }}</a>
-        {% if post.header.icon %}<img src="{{ post.header.icon }}" alt="" style="height:18px; margin-left:8px">{% endif %}
+        {% if post.header.icon %}<img src="{{ post.header.icon }}" alt="" style="height:30px; margin-left:8px">{% endif %}
       {% endif %}
     </h2>
     {% include page__meta.html type=include.type %}
