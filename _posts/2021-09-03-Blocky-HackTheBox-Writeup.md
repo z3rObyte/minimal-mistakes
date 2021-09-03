@@ -108,7 +108,7 @@ Vemos 3 puertos
 |:------:|:--------:|
 | 21 | [FTP](https://es.digitaltrends.com/computadoras/que-es-ftp-y-para-que-sirve/)
 | 22 | [SSH](https://www.hostinger.es/tutoriales/que-es-ssh) |
-| 80 | [HTTP](https://developer.mozilla.org/es/docs/Web/HTTP){:target="\_blank"} |
+| 80 | [HTTP](https://developer.mozilla.org/es/docs/Web/HTTP){:target="\_blank"}{:rel="noopener nofollow"} |
 | 25565 | Servidor dedicado de Minecraft |
 
 # User.txt
