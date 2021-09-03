@@ -1,6 +1,9 @@
+/* ==========================================================================
+   Z3r0 skin
+   ========================================================================== */
 
 /* Colors */
-$background-color: #212c5a !default;
+$background-color: #050d1a !default;
 $text-color: #eaeaea !default;
 $primary-color: #16c8d1 !default;
 $border-color: mix(#fff, $background-color, 20%) !default;
@@ -15,8 +18,10 @@ $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
 $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 
+.author__urls.social-icons i,
 .author__urls.social-icons .svg-inline--fa,
-.page__footer-follow .social-icons .svg-inline--fa {
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa  {
   color: inherit;
 }
 
