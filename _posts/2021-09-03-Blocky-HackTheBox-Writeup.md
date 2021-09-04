@@ -43,7 +43,7 @@ Se puede ver que la máquina está activa y que observando el TTL, concluimos qu
 
 Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/){:target="\_blank"}{:rel="noopener nofollow"}.
 
-También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"}
+También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"}.
 
 ## Nmap
 
@@ -95,7 +95,7 @@ Nmap done: 1 IP address (1 host up) scanned in 45.18 seconds
 | `-p-` | Es una forma de especificar que queremos escanear todos los puertos existentes, los 65535. |
 | `--open` | Este parámetro hace que nos muestre únicamente los puertos abiertos, que nos omita los filtered. |
 | `-sS` | Especificamos el tipo de escaneo 'SYN port Scan', que es más rápido y sigiloso que el tipo de escaneo por defecto. |
-| `--min-rate [valor]` | envía paquetes tan o más rápido que la tasa dada. |
+| `--min-rate [valor]` | Envía paquetes tan o más rápido que la tasa dada. |
 | `-v` | Especifica que queremos más 'verbose', es decir, que nos muestre mas información de la convencional. |
 | `-n` | Quitamos la resolución DNS para que el escaneo vaya más rápido. |
 | `-sC` | Utiliza un escaneo con una serie de scripts por defecto de nmap. |
@@ -128,7 +128,7 @@ Password:
 530 Login incorrect.
 Login failed.
 ```
-Pero como vemos, esta deshabilitado.
+Pero como vemos, está deshabilitado.
 
 ### HTTP
 
@@ -150,7 +150,7 @@ Navego hasta la web para ver que hay:
 
 Se ve que es un blog relacionado con Minecraft.
 
-Lo primero que me llama la atención es el post que hay públicado
+Lo primero que me llama la atención es el post que hay publicado.
 
 ![navegador2](https://user-images.githubusercontent.com/67548295/132043559-8d8c4510-97ee-4dc0-bf43-d75129f99a3c.png)
 
@@ -193,7 +193,7 @@ Accedo ahora al recurso `plugins`:
 
 ![navegador4](https://user-images.githubusercontent.com/67548295/132047257-7743986b-49de-45f1-9e75-b5c718e7b90e.png)
 
-Vemos un gestor de archivos muy bonito y un par de archivos, descargo los 2 para intentar ver lo que contienen.
+Vemos un gestor de archivos muy bonito y un par de archivos, descargo los dos para intentar ver lo que contienen.
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~/Descargas]
@@ -232,7 +232,7 @@ Pero obtenemos un _Permission denied_.
 
 No descarto la posibilidad de que la contraseña no sea válida y enumero un poco más la web en busca de usuarios.
 
-Hasta que me fijo que el autor del único post que hay en el blog se llama _Notch_
+Hasta que me fijo que el autor del único post que hay en el blog se llama _Notch_:
 
 ![navegador7](https://user-images.githubusercontent.com/67548295/132048846-d77ac250-f9ff-44ed-ab8a-a6b2f7a003a6.png)
 
@@ -280,9 +280,9 @@ User notch may run the following commands on Blocky:
 
 Podemos ejecutar cualquier comando como cualquier usuario.
 
-Con esto básicamente podríamos ejecutar cualquier comando como root
+Con esto básicamente podríamos ejecutar cualquier comando como root.
 
-Yo por ejemplo voy a ejecutar `sudo bash` ya que se me hace la forma más sencilla, pero hay mil formas más de convertirse en superusuario:
+Yo por ejemplo voy a ejecutar `sudo bash` ya que se me hace la forma más sencilla, pero hay muchas más formas de convertirse en superusuario:
 
 ```bash
 notch@Blocky:~$ sudo bash
@@ -324,7 +324,7 @@ Como vemos nos marca una serie de pasos a seguir, hagámoslos.
 
 ---
 
-**1.** hay que ejecutar `wget https://raw.githubusercontent.com/saghul/lxd-alpine-builder/master/build-alpine` en nuestra **máquina de atacante**
+**1.** Hay que ejecutar `wget https://raw.githubusercontent.com/saghul/lxd-alpine-builder/master/build-alpine` en nuestra **máquina de atacante**:
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~/Descargas]
@@ -336,7 +336,7 @@ Petición HTTP enviada, esperando respuesta... 200 OK
 Longitud: 7662 (7,5K) [text/plain]
 Grabando a: «build-alpine»
 ```
-**2.** En segundo lugar hay que ejecutar `bash build-alpine` como usuario **root** en nuestra máquina de atacante
+**2.** En segundo lugar hay que ejecutar `bash build-alpine` como usuario **root** en nuestra máquina de atacante:
 
 ```bash
 ┌─[root@z3r0byte]─[/home/z3r0byte/Descargas]
@@ -362,7 +362,7 @@ alpine-devel@lists.alpinelinux.org-4a6a0840.rsa.pub: La suma coincide
 Executing busybox-1.33.1-r3.trigger
 OK: 9 MiB in 20 packages
 ```
-¡Ojo!, si no te funciona la primera vez, prueba a ejecutarlo más veces
+¡Ojo!, si no te funciona la primera vez, prueba a ejecutarlo más veces.
 
 **3.** Ejecutamos `dos2unix [nombre del exploit]` y transferimos el **exploit** y el archivo **alpine.tar.gz** generado anteriormente a la **máquina víctima**:
 
@@ -374,7 +374,7 @@ dos2unix: convirtiendo archivo 46978.sh a formato Unix...
 
 ![terminal2](https://user-images.githubusercontent.com/67548295/132099721-44b87ff5-7a22-44f3-b7f6-10e503cd16d9.png)
 
-**4.** Ejecutamos el exploit en la **máquina víctima** pasandole como argumento el archivo **alpine** que creamos anteriormente
+**4.** Ejecutamos el exploit en la **máquina víctima** pasandole como argumento el archivo **alpine** que creamos anteriormente:
 
 ```bash
 notch@Blocky:/tmp$ bash 46978.sh -f alpine-v3.14-x86_64-20210904_1614.tar.gz 
@@ -385,7 +385,7 @@ To start your first container, try: lxc launch ubuntu:16.04
 Image imported with fingerprint: 4e3f8cf191aec1f46ed50ffc8c8ba4a538aabe302601358a2e817a5bb4a07295
 error: This must be run as root
 ```
-como vemos nos da un error, pero si volvemos a ejecutar el exploit ya nos funcionará:
+Como vemos nos da un error, pero si volvemos a ejecutar el exploit ya nos funcionará:
 
 ```bash
 notch@Blocky:/tmp$ bash 46978.sh -f alpine-v3.14-x86_64-20210904_1614.tar.gz 
@@ -402,9 +402,9 @@ Device giveMeRoot added to privesc
 ~ # 
 ```
 
-Como vemos nos ha metido en un contenedor como usuario **root**, pero, ¿para que esto? te preguntarás.
+Como vemos nos ha metido en un contenedor como usuario **root**, pero, ¿para qué esto? te preguntarás.
 
-Bueno si nos movemos hacia /mnt/root, vamos a ver que tendrémos una montura de la máquina victima real donde podemos hacer cualquier cambio:
+Bueno si nos movemos hacia /mnt/root, vamos a ver que tendrémos una montura de la máquina víctima real donde podemos hacer cualquier cambio:
 
 ```bash
 ~ # cd /mnt/root
@@ -442,6 +442,6 @@ root
 
 # Resumen
 
-En esta máquina hemos conseguido acceso inicial por SSH mediante unas credenciales "hard codeadas" en un plugin expuesto en el servicio web. Para escalar privilegios hemos abusado de un permiso de sudoers que nos permitía ejecutar cualquier comando como cualquier usuario. También hemos explotado otra manera alternativa abusando del grupo asignado `lxd`
+En esta máquina hemos conseguido acceso inicial por SSH mediante unas credenciales "hard codeadas" en un plugin expuesto en el servicio web. Para escalar privilegios hemos abusado de un permiso de sudoers que nos permitía ejecutar cualquier comando como cualquier usuario. También hemos explotado otra manera alternativa abusando del grupo asignado `lxd`.
 
 
