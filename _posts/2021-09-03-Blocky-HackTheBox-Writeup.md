@@ -118,6 +118,7 @@ Vemos 3 puertos
 Empiezo probando si el servicio FTP acepta _Anonymous login_:
 
 ```bash
+┌─[z3r0byte@z3r0byte]─[~]
 └──╼ $ftp 10.10.10.37
 Connected to 10.10.10.37.
 220 ProFTPD 1.3.5a Server (Debian) [::ffff:10.10.10.37]
@@ -141,7 +142,7 @@ Hago uso de la herramienta `whatweb` para listar las tecnologías que emplea el 
 http://10.10.10.37 [200 OK] Apache[2.4.18], Country[RESERVED][ZZ], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.18 (Ubuntu)], IP[10.10.10.37], JQuery[1.12.4], MetaGenerator[WordPress 4.8], PoweredBy[WordPress,WordPress,], Script[text/javascript], Title[BlockyCraft &#8211; Under Construction!], UncommonHeaders[link], WordPress[4.8]
 ```
 
-Nos reporta que hay un wordpress 4.8 y varias tecnologías más.
+Nos reporta que hay un **wordpress 4.8** y varias tecnologías más.
 
 Navego hasta la web para ver que hay:
 
@@ -208,11 +209,11 @@ M��nv�kιs���??x�)���rXN��
 t��`$\�8�/����P���#(�$�Nf��$�Kݨ��Z�Z�֖ !���U���M[[�~��ݫ�T���}�Aż��r�ٷ������g�h�c:�5P��o��6����h0��F��њ'��M�k��#�<��)k�(�����vӷ$JF��) [o��=�,��#�@�l���qwI`�l���)���jN�"�zN�Btf�9P{[�:C�<=�y���L��-m��4�(���w����R��*��m�/
 ```
 
-Intentando listar estos archivos, vemos que no son legibles.
+Intentando listar estos archivos, vemos que **no son legibles**.
 
 Tras investigar un poco, me doy cuenta de que hay recursos online que pueden descompilar estos archivos `.jar`.
 
-Pruebo a descompilar los archivos y uno de ellos tenía credenciales:
+Pruebo a descompilar los archivos y uno de ellos tenía **credenciales**:
 
 ![navegador6](https://user-images.githubusercontent.com/67548295/132048438-b50c511f-7a2c-40da-9b9a-3c9c5a6c5f62.png)
 
@@ -240,7 +241,7 @@ Pruebo ahora a acceder por SSH con el usuario _Notch_ y la contraseña encontrad
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~/Descargas]
 └──╼ $ssh notch@10.10.10.37
-notch@10.10.10.37's password: 
+notch@10.10.10.37 password: 
 Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-62-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com
@@ -363,7 +364,7 @@ OK: 9 MiB in 20 packages
 ```
 ¡Ojo!, si no te funciona la primera vez, prueba a ejecutarlo más veces
 
-**3.** Ejecutamos `dos2unix [nombre del exploit]` y transferimos el **exploit** y el archivo **alpine.tar.gz** que se ha generado del comando anterior a la **máquina víctima**:
+**3.** Ejecutamos `dos2unix [nombre del exploit]` y transferimos el **exploit** y el archivo **alpine.tar.gz** generado anteriormente a la **máquina víctima**:
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~/Descargas]
@@ -373,7 +374,7 @@ dos2unix: convirtiendo archivo 46978.sh a formato Unix...
 
 ![terminal2](https://user-images.githubusercontent.com/67548295/132099721-44b87ff5-7a22-44f3-b7f6-10e503cd16d9.png)
 
-**4.** Ejecutamos el exploit en la **máquina víctima** pasandole como argumento el archivo **alpine** que creamos anteriormente**
+**4.** Ejecutamos el exploit en la **máquina víctima** pasandole como argumento el archivo **alpine** que creamos anteriormente
 
 ```bash
 notch@Blocky:/tmp$ bash 46978.sh -f alpine-v3.14-x86_64-20210904_1614.tar.gz 
