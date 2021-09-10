@@ -440,8 +440,8 @@ bash-4.3# whoami
 root
 ```
 
-# Resumen
+# Resumen y autopwn
 
-En esta máquina hemos conseguido acceso inicial por SSH mediante unas credenciales "hard codeadas" en un plugin expuesto en el servicio web. Para escalar privilegios hemos abusado de un permiso de sudoers que nos permitía ejecutar cualquier comando como cualquier usuario. También hemos explotado otra manera alternativa abusando del grupo asignado `lxd`.
+En esta máquina hemos conseguido acceso inicial por **SSH** mediante unas credenciales "hard codeadas" en un **plugin expuesto** en el servicio web. Para escalar privilegios hemos abusado de un **permiso de sudoers** que nos permitía **ejecutar cualquier comando** como cualquier usuario. También hemos explotado otra manera alternativa abusando del **grupo asignado** `lxd`. También he creado un script **autopwn** que te da una shell como **root** en el sistema con tan solo ejecutarlo, lo puedes descargar en mi [GitHub](https://github.com/z3rObyte/HackTheBox-Autopwn/blob/main/Blocky-autoPWN.py){:target="\_blank"}{:rel="noopener nofollow"}.
 
 
