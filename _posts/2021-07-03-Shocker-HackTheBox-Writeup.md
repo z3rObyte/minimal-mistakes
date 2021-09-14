@@ -14,7 +14,7 @@ categories:
 tags:
   - ShellShock
   - Perl
-  - sudo
+  - Sudo
 ---
 
 
