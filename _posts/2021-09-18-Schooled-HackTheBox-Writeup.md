@@ -1,7 +1,7 @@
 ---
 title: "Schooled - HTB Writeup"
 layout: single
-excerpt: "Schooled es una máquina de dificultad media de HackTheBox. En esta máquina hemos abusado de un XSS para hacer un cookie hijacking y convertirnos en un usuario con más privilegios. Para acceder a la máquina nos hemos aprovechado de una vulnerabilidad de Moodle que permitía tener un RCE. Para escalar privilegios nos hemos aprovechado de un permisos de sudoers con el que podímos ejecutar el binario pkg como usuario root.
+excerpt: "Schooled es una máquina de dificultad media de HackTheBox. En esta máquina hemos abusado de un XSS para hacer un cookie hijacking y un RCE para la intrusión inicial. Para escalar privilegios nos hemos aprovechado de un permisos de sudoers con el que se podía ejecutar pkg como usuario root.
 show_date: true
 classes: wide
 header:
