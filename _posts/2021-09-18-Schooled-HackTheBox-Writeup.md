@@ -337,7 +337,7 @@ El archivo contiene supuestas **credenciales** de [MySQL](https://www.hostinger.
 Bien probemos a conectarnos al cliente de MySQL con las credenciales que hemos encontrado:
 
 ```bash
-/usr/local/bin/mysql -u moodle -pPXXXXXXXXX0 -e "show databases;"
+~$ /usr/local/bin/mysql -u moodle -pPXXXXXXXXX0 -e "show databases;"
 
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Database
@@ -350,7 +350,7 @@ Las credenciales son válidas.
 Enumero la base de datos `moodle` hasta que encuentro una tabla con nombre `mdl_user` que contenía todos los **hashes** de todos los usuarios del `Moodle`:
 
 ```bash
-~$ /usr/local/bin/mysql -u moodle -pPlaybookMaster2020 -e 'use moodle;select firstname,password from mdl_user;'
+~$ /usr/local/bin/mysql -u moodle -pPXXXXXXXXX0 -e 'use moodle;select firstname,password from mdl_user;'
 
 mysql: [Warning] Using a password on the command line interface can be insecure.
 firstname	password
