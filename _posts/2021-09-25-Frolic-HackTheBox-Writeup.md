@@ -235,7 +235,9 @@ Colocamos esas credenciales en el panel de login y accedemos:
 
 ![image](https://user-images.githubusercontent.com/67548295/134375307-2f04bf10-f47d-4365-ae93-a3b7dcc784f0.png)
 
-Tras _loggearnos_ vemos esto, a simple vista parece algo sin sentido, pero yo ya estoy pensando en que sea un [lenguaje esotérico](https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n_esot%C3%A9rico){:target="\_blank"}{:rel="noopener nofollow"}.
+Tras _loggearnos_ vemos esos símbolos extraños.
+
+A simple vista parece algo sin sentido, pero yo ya estoy pensando en que sea un [lenguaje esotérico](https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n_esot%C3%A9rico){:target="\_blank"}{:rel="noopener nofollow"}.
 
 Busco un listado de **lenguajes esotéricos**, y busco hasta que me encuentro con uno que era semejante:
 
