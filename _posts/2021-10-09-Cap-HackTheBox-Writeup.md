@@ -1,7 +1,7 @@
 ---
 title: "Cap - HTB Writeup"
 layout: single
-excerpt: "Frolic es una máquina de dificultad fácil de HackTheBox. En esta máquina hemos abusado de un CSV injection para conseguir un RCE para la intrusión inicial. Para escalar privilegios nos aprovechamos de un binario vulnerable a buffer overflow para hacer un Ret2Libc y convertirnos en el usuario root."
+excerpt: "Cap es una máquina de dificultad fácil de la plataforma de HackTheBox. En esta máquina accedemos como usuario mediante unas credenciales encontradas en un archivo de captura de red alojado en el servidor web. Para escalar privilegios, abusamos de la capability cap_setuid de python para spawnear una terminal como superusuario"
 show_date: true
 classes: wide
 header:
@@ -12,9 +12,9 @@ categories:
   - Writeup
   - HackTheBox
 tags:
-  - Wireshark
+  - Tshark
   - FTP
-  - 
+  - Capabilities
   - Linux
 ---
 
@@ -48,7 +48,7 @@ También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3
 
 ## Nmap
 
-Comenzamos con la fase de enumeración de puertos. Haré uso de la herramienta `nmap`:
+Comenzamos con la fase de **enumeración de puertos**. Haré uso de la herramienta `nmap`:
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
@@ -168,7 +168,7 @@ ftp> quit
 221 Goodbye.
 ```
 
-Pero como vemos, no está habilitado. También observo la versión del servidor FTP, busco vulnerabilidades asociadas pero tampoco encuentro nada:
+Pero como vemos, **no está habilitado**. También observo la **versión** del servidor FTP, busco vulnerabilidades asociadas pero tampoco encuentro nada:
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
@@ -176,7 +176,7 @@ Pero como vemos, no está habilitado. También observo la versión del servidor 
 Exploits: No Results
 Shellcodes: No Results
 ```
-No encuentro nada interesante el puerto 21. Paso a enumerar el servicio SSH
+No encuentro nada interesante el **puerto 21**. Paso a enumerar el servicio **SSH**
 
 ## SSH 
 
@@ -195,7 +195,7 @@ Paso a enumerar el servidor HTTP.
 
 Hago un pequeño reconocimiento desde la consola antes de abrir el navegador.
 
-Utilizo la herramienta `whatweb` para identificar las tecnologías que emplea el servidor:
+Utilizo la herramienta `whatweb` para identificar las **tecnologías** que emplea el servidor:
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
@@ -214,9 +214,9 @@ Utilizo el navegador para visitar el servidor web:
 
 ![image](https://user-images.githubusercontent.com/67548295/135764692-11bf0ad3-04cd-4de9-a41d-2e9a494ef11e.png)
 
-Parece ser un _dashboard_ en el que ya estamos registrados.
+Parece ser un **_dashboard_** en el que ya estamos **registrados**.
 
-Pero al inspeccionar las cookies me doy cuenta de que no hay ninguna en uso, asi que deduzco que la web es así por defecto.
+Pero al inspeccionar las **cookies** me doy cuenta de que no hay ninguna en uso, asi que deduzco que la web es así **por defecto**.
 
 Vemos un menú a la izquierda con varias cosas:
 
@@ -224,7 +224,7 @@ Vemos un menú a la izquierda con varias cosas:
 
 Empiezo accediendo al apartado de `security snapshots`:
 
-Como dice el apartado, son archivos `pcap`, es decir, capturas de red.
+Como dice el apartado, son archivos `pcap`, es decir, **capturas de red**.
 
 Pero como podemos ver, no hay ningun paquete capturado.
 
@@ -232,9 +232,9 @@ Sin embargo, si nos fijamos en la url, podremos ver algo que llama la atención:
 
 ![image](https://user-images.githubusercontent.com/67548295/135766012-a67ac0f9-8445-4c74-b946-0dd422f67796.png)
 
-Ruta `/data/1`, lo que debemos de preguntarnos es: ¿Qué pasa si cambio el 1 por otro número?
+Ruta `/data/1`, lo que debemos de preguntarnos es: ¿Qué pasa si cambio el `1` por otro número?
 
-Bien, pruebo con un 2:
+Bien, pruebo con un `2`:
 
 ![image](https://user-images.githubusercontent.com/67548295/135766168-13e69056-aacd-4716-9cd7-7b86de70ca5b.png)
 
@@ -263,7 +263,8 @@ Parece ser que es otro archivo `.pcap` diferente. Lo descargo.
 
 Hago uso nuevamente de la herramienta `tshark` para leer el archivo que descargamos:
 
-```┌─[z3r0byte@z3r0byte]─[~/Descargas]
+```bash
+┌─[z3r0byte@z3r0byte]─[~/Descargas]
 └──╼ $tshark -r 0.pcap 2>/dev/null
 
                  [...]
@@ -279,7 +280,7 @@ Hago uso nuevamente de la herramienta `tshark` para leer el archivo que descarga
                   [...]
 ```
    
-¡Unas credenciales! Parece ser que se capturaron paquetes de un intento de inicio de sesión.
+¡Unas credenciales! Parece ser que se capturaron paquetes de un **intento de inicio de sesión en el servidor FTP**.
 
 Pruebo a conectarme al `servidor FTP` con las credenciales encontradas:
 
@@ -334,7 +335,7 @@ drwxr-xr-x   14 0        0            4096 May 23 19:17 var
 226 Directory send OK.
 ```
 
-Pienso en reutilizar las credenciales en el servidor SSH para ver si podemos ingresar a la máquina:
+Pienso en **reutilizar** las credenciales en el servidor **SSH** para ver si podemos ingresar a la máquina:
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~/Descargas]
@@ -380,7 +381,7 @@ nathan@cap:~$
 
 ¡Y sí! Son válidas.
 
-A partir de este punto ya podremos localizar la flag `user.txt` en la ruta `/home/nathan/user.txt`:
+A partir de este punto ya podremos localizar la **flag** `user.txt` en la ruta `/home/nathan/user.txt`:
 
 ```bash
 nathan@cap:~$ cat /home/nathan/user.txt 
@@ -389,7 +390,7 @@ nathan@cap:~$ cat /home/nathan/user.txt
 
 # Root.txt
 
-Enumero el sistema de forma manual, pero a simple vista no encuentro nada, así que empiezo a enumerar el sistema de forma más profunda.
+Enumero el sistema de forma **manual**, pero a simple vista no encuentro nada, así que empiezo a enumerar el sistema de forma **más profunda**.
 
 Hasta que me doy cuenta de que hay [capabilities](http://www.etl.it.uc3m.es/Linux_Capabilities){:target="\_blank"}{:rel="noopener nofollow"} asignadas.
 
@@ -401,13 +402,13 @@ nathan@cap:~$ getcap -r / 2>/dev/null
 [...]
 
 ```
-Las `capabilities` son permisos especiales que podemos asignar a archivos, sirven para asignar permisos específicos, algo más seguro que asignar `SUID`.
+Las `capabilities` son permisos **especiales** que podemos asignar a archivos, sirven para asignar **permisos específicos**, algo más seguro que asignar `SUID`.
 
-En este caso, `python` tiene la capabilitie `cap_setuid` que nos permite cambiar el `uid` del proceso que ejecutemos con `python`.
+En este caso, `python` tiene la **capability** `cap_setuid` que nos permite cambiar el `uid` del proceso que ejecutemos con `python`.
 
-Es decir, podemos cambiar el `uid` a `0` que corresponde al usuario `root` y ejecutar código.
+Es decir, podemos cambiar el `uid` a `0` que corresponde al usuario `root` y **ejecutar código**.
 
-Con un simple script en `python` podríamos _spawnear_ una shell como superusuario:
+Con un simple script en `python` podríamos _spawnear_ una shell como **superusuario**:
 
 ```bash
 #!/usr/bin/python3.8
@@ -419,7 +420,7 @@ os.setuid(0) # asignamos el UID a 0 para hacer que root sea propietario del proc
 pty.spawn("/bin/bash") # "spawneamos" una full TTY
 ```
 
-Al ejecutar este script conseguimos una terminal como usuario root:
+Al ejecutar este script conseguimos una terminal como usuario **root**:
 
 ```bash
 nathan@cap:/tmp/privesc$ getcap /usr/bin/python3.8
@@ -432,7 +433,7 @@ root
 uid=0(root) gid=1001(nathan) groups=1001(nathan)
 ```
 
-Ya como usuario root, podemos ver la flag `root.txt` en `/root/root.txt`
+Ya como usuario root, podemos ver la **flag** `root.txt` en `/root/root.txt`
 
 ```bash
 root@cap:/tmp/privesc# cat /root/root.txt 
@@ -441,8 +442,5 @@ root@cap:/tmp/privesc# cat /root/root.txt
 
 # Conclusión
 
-En esta máquina nos hemos aprovechado de un fichero de captura de red que contenía credenciales para conseguir acceso inicial a la máquina por medio de SSH.
-Escalamos privilegios aprovechando la capability `cap_setuid` de python3.8 que permitía cambiar el UID del proceso que ejecutasemos, spawneamos una terminal con el UID en 0 (root) y conseguimos permisos de administrador.
-
-
-
+En esta máquina nos hemos aprovechado de un fichero de **captura de red** que contenía **credenciales** para conseguir acceso inicial a la máquina por medio de **SSH**.
+Escalamos privilegios aprovechando la **capability** `cap_setuid` de `python3.8` que permitía cambiar el **UID** del proceso que ejecutasemos, _spawneamos_ una terminal con el **UID** en `0` (root) y conseguimos permisos de **administrador**.
