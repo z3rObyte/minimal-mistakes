@@ -41,9 +41,9 @@ rtt min/avg/max/mdev = 69.779/69.779/69.779/0.000 ms
 
 Se puede ver que la máquina está activa y que observando el TTL, concluimos que es una máquina Linux.
 
-Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/).
+Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/){:target="\_blank"}{:rel="noopener nofollow"}.
 
-También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier).
+También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"}.
 
 ## Nmap
 
@@ -163,15 +163,15 @@ ERROR Opening: https://10.10.10.7/ - SSL_connect returned=1 errno=0 state=error:
 
 Aquí estamos viendo que hay un redirect a HTTPS, pero whatweb no lo puede analizar por la clave DH que proporciona el servidor es poco robusta.
 
-Esto se puede solucionar editando una configuración de seguridad el archivo /etc/ssl/openssl.cnf, más información de como hacerlo [aquí](https://imlc.me/dh-key-too-small)
+Esto se puede solucionar editando una configuración de seguridad el archivo /etc/ssl/openssl.cnf, más información de como hacerlo [aquí](https://imlc.me/dh-key-too-small){:target="\_blank"}{:rel="noopener nofollow"}
 
 Bueno, siguiendo con la enumeración me dispongo a visitar la web:
 
 ![navegador1](https://user-images.githubusercontent.com/67548295/130788818-b2652cb6-f45c-4f1c-990b-b7435aad5bcf.png)
 
-Vemos un panel de login del servicio [Elastix](https://www.elastix.org/)
+Vemos un panel de login del servicio [Elastix](https://www.elastix.org/){:target="\_blank"}{:rel="noopener nofollow"}
 
-Si buscamos lo que es [PBX](https://www.cisco.com/c/es_mx/solutions/small-business/resource-center/collaboration/what-is-a-pbx.html), vemos que es el responsable de las molestas redirecciones de llamada de cuando contactamos con empresas de telefono o similares, no solo esto, tambien tiene más funciones que te dejo que investigues.
+Si buscamos lo que es [PBX](https://www.cisco.com/c/es_mx/solutions/small-business/resource-center/collaboration/what-is-a-pbx.html){:target="\_blank"}{:rel="noopener nofollow"}, vemos que es el responsable de las molestas redirecciones de llamada de cuando contactamos con empresas de telefono o similares, no solo esto, tambien tiene más funciones que te dejo que investigues.
 
 ---
 
@@ -187,7 +187,7 @@ Intento de nuevo credenciales por defecto, y encuentro una sorpresa:
 
 ![navegador3](https://user-images.githubusercontent.com/67548295/130797264-61f714d6-fbaa-4f99-87f5-db0da02bfbcd.png)
 
-Hay un recurso con extension .cgi, tras ver esto se me ocurre que podriamos explotar una vulnerabilidad de tipo [shellshock](https://es.wikipedia.org/wiki/Shellshock_%28error_de_software%29)
+Hay un recurso con extension .cgi, tras ver esto se me ocurre que podriamos explotar una vulnerabilidad de tipo [shellshock](https://es.wikipedia.org/wiki/Shellshock_%28error_de_software%29){:target="\_blank"}{:rel="noopener nofollow"}
 
 Pruebo a ejecutar esta vulnerabilidad y consigo una shell directamente como root!!!
 
@@ -221,7 +221,7 @@ FreePBX 2.10.0 / Elastix 2.2.0 - Remote Code Execution                          
 Shellcodes: No Results
 ```
 
-Concretamente el exploit [Elastix 2.2.0 - 'graph.php' Local File Inclusion](https://www.exploit-db.com/exploits/37637)
+Concretamente el exploit [Elastix 2.2.0 - 'graph.php' Local File Inclusion](https://www.exploit-db.com/exploits/37637){:target="\_blank"}{:rel="noopener nofollow"}
 
 Editamos el exploit y vemos como se consigue tener un LFI:
 
@@ -276,9 +276,9 @@ Y logramos acceder!
 
 # Resumen y autopwn
 
-En esta máquina hemos explotado dos formas distintas de acceder, una con un[shellshock](https://es.wikipedia.org/wiki/Shellshock_%28error_de_software%29) y
-la otra con un [LFI](https://www.welivesecurity.com/la-es/2015/01/12/como-funciona-vulnerabilidad-local-file-inclusion/). Ambas formas accediendo directamente como root.
-También he desarrollado un script autopwn que te proporciona una shell como root en la máquina tras ejecutarlo, está disponible en mi [GitHub](https://github.com/z3rObyte/HackTheBox-Autopwn/blob/main/Beep-AutoPWN.sh)
+En esta máquina hemos explotado dos formas distintas de acceder, una con un[shellshock](https://es.wikipedia.org/wiki/Shellshock_%28error_de_software%29){:target="\_blank"}{:rel="noopener nofollow"} y
+la otra con un [LFI](https://www.welivesecurity.com/la-es/2015/01/12/como-funciona-vulnerabilidad-local-file-inclusion/){:target="\_blank"}{:rel="noopener nofollow"}. Ambas formas accediendo directamente como root.
+También he desarrollado un script autopwn que te proporciona una shell como root en la máquina tras ejecutarlo, está disponible en mi [GitHub](https://github.com/z3rObyte/HackTheBox-Autopwn/blob/main/Beep-AutoPWN.sh){:target="\_blank"}{:rel="noopener nofollow"}
 
 
 
