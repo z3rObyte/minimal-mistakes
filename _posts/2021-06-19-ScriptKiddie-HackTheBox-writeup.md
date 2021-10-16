@@ -36,9 +36,9 @@ rtt min/avg/max/mdev = 91.973/91.973/91.973/0.000 ms
 
 La máquina nos responde, y mediante el TTL veo que es una máquina linux.
 
-Más información sobre la deteccion de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/).
+Más información sobre la deteccion de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/){:target="\_blank"}{:rel="noopener nofollow"}.
 
-También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier).
+También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"}.
 
 ## Nmap
 
@@ -103,9 +103,9 @@ file.
 
 Suponiendo que por detrás se está ejecutando un msfvenom, busco información acerca de los template files en msfvenom.
 
-Y encuentro un exploit que se aprovecha de estos template files. [CVE-2020-7384](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7384)
+Y encuentro un exploit que se aprovecha de estos template files. [CVE-2020-7384](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7384){:target="\_blank"}{:rel="noopener nofollow"}
 
-Uso un [exploit](https://github.com/nikhil1232/CVE-2020-7384) de github que automatiza la explotación de esta vulnerabilidad.
+Uso un [exploit](https://github.com/nikhil1232/CVE-2020-7384){:target="\_blank"}{:rel="noopener nofollow"} de github que automatiza la explotación de esta vulnerabilidad.
 
 Los pasos que seguí para conseguir una shell fueron los siguientes:
 
@@ -195,9 +195,9 @@ pwn
 
 kid@scriptkiddie:~$ 
 ```
-Miro si tiene directorio personal en /home y si lo tiene.
+Miro si tienen directorio personal en /home y si lo tienen.
 
-Además tengo los privilegios de entrar a él.
+Accedo al directorio personal de pwn.
 
 Ahí, me encuentro un script llamado _scanlosers.sh_
 
