@@ -44,7 +44,7 @@ Como se puede ver, la máquina nos responde.
 
 Mediante el TTL se puede saber el sistema operativo de la máquina, que en este caso es Linux. 
 
-[Aquí](https://subinsb.com/default-device-ttl-values/){:target="_blank"}{:rel="noopener nofollow"} puedes consultar como identificar el OS por el TTL. O también puedes utilizar mi herramienta [OSidentifier](https://github.com/z3rObyte/OSidentifier){:target="_blank"}{:rel="noopener nofollow"} 
+[Aquí](https://subinsb.com/default-device-ttl-values/){:target="\_blank"}{:rel="noopener nofollow"} puedes consultar como identificar el OS por el TTL. O también puedes utilizar mi herramienta [OSidentifier](https://github.com/z3rObyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"} 
 
 
 ### Nmap
@@ -222,7 +222,7 @@ OK
 ```
 ¡La credencial es válida!
 
-Después de googlear bastante, me encontré con un [recurso](https://book.hacktricks.xyz/pentesting/6379-pentesting-redis){:target="_blank"}{:rel="noopener nofollow"} bastante bueno sobre este servicio, del cual me fijé para enumerarlo.
+Después de googlear bastante, me encontré con un [recurso](https://book.hacktricks.xyz/pentesting/6379-pentesting-redis){:target="\_blank"}{:rel="noopener nofollow"} bastante bueno sobre este servicio, del cual me fijé para enumerarlo.
 
 ```bash
 
@@ -279,7 +279,7 @@ $~
 
 Nada más y nada menos que credenciales para el servicio **Rsync**.
 
-Tras volver a googlear en busca de información sobre este servicio, encuentro un [recurso](https://book.hacktricks.xyz/pentesting/873-pentesting-rsync){:target="_blank"}{:rel="noopener nofollow"} de utilidad casualmente en la misma página que habia consultado anteriormente.
+Tras volver a googlear en busca de información sobre este servicio, encuentro un [recurso](https://book.hacktricks.xyz/pentesting/873-pentesting-rsync){:target="\_blank"}{:rel="noopener nofollow"} de utilidad casualmente en la misma página que habia consultado anteriormente.
 
 Y me dispongo a enumerar el servicio **Rsync**.
 
@@ -650,6 +650,6 @@ Me ha parecido una muy buena máquina, donde he aprendido sobre varios servicios
 
 Esta máquina de verdad ha puesto a prueba mis habilidades de búsqueda y paciencia ya que he tenido que googlear mucho para encontrar la información sobre los servicios.
 
-Máquina recomendable. [Link](https://tryhackme.com/room/vulnnetinternal){:target="_blank"}{:rel="noopener nofollow"} a VulnNet: Internal
+Máquina recomendable. [Link](https://tryhackme.com/room/vulnnetinternal){:target="\_blank"}{:rel="noopener nofollow"} a VulnNet: Internal
 
 
