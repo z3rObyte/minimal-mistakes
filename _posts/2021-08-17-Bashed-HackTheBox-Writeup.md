@@ -41,9 +41,9 @@ rtt min/avg/max/mdev = 64.321/64.321/64.321/0.000 ms
 
 Se puede ver que la máquina está activa y que observando el TTL, concluimos que es una máquina Linux.
 
-Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/).
+Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/){:target="\_blank"}{:rel="noopener nofollow"}.
 
-También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier).
+También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"}.
 
 ## Nmap
 
