@@ -227,9 +227,10 @@ Y listo, máquina rooteada. En /root/ podremos ver la flag de root:
 2eb63e9XXXXXXXXXXXXXXXXXXXX90d45
 ```
 
-# Opinión
+# Opinión y autoPWN
 
 La máquina ha sido bastante facil, pero a la vez me ha permitido repasar conceptos, me ha gustado.
+En mi github está disponible un [script autoPWN](https://github.com/z3rObyte/HackTheBox-Autopwn/blob/main/Shocker-autoPWN.py){:target="\_blank"}{:rel="noopener nofollow"} que te automatiza toda la explotación y te devuelve una shell como root en la máquina victima.
 
 
 
