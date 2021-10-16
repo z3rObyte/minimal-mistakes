@@ -39,9 +39,9 @@ rtt min/avg/max/mdev = 71.771/71.771/71.771/0.000 ms
 
 Podemos observar que la máquina está activa y que observando el TTL, concluimos que es una máquina Windows.
 
-Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/).
+Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/){:target="\_blank"}{:rel="noopener nofollow"}.
 
-También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier).
+También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"}.
 
 ## Nmap
 
@@ -187,9 +187,9 @@ Me llama la atención el apartado de arriba con nombre _Demo_
 
 Accedo al recurso y veo que puedo indicar una ruta para escanear un archivo.
 
-Intente ejecutar diferentes técnicas de explotación como [LFI](https://www.welivesecurity.com/la-es/2015/01/12/como-funciona-vulnerabilidad-local-file-inclusion/), [RFI](https://wiki.elhacker.net/bugs-y-exploits/nivel-web/rfi), etc. Pero ninguna funcionó.
+Intente ejecutar diferentes técnicas de explotación como [LFI](https://www.welivesecurity.com/la-es/2015/01/12/como-funciona-vulnerabilidad-local-file-inclusion/){:target="\_blank"}{:rel="noopener nofollow"}, [RFI](https://wiki.elhacker.net/bugs-y-exploits/nivel-web/rfi){:target="\_blank"}{:rel="noopener nofollow"}, etc. Pero ninguna funcionó.
 
-Hasta que probe a hacer un [SSRF](https://blog.hackmetrix.com/ssrf-server-side-request-forgery/) y dió resultados:
+Hasta que probe a hacer un [SSRF](https://blog.hackmetrix.com/ssrf-server-side-request-forgery/){:target="\_blank"}{:rel="noopener nofollow"} y dió resultados:
 
 ![navegador3](https://user-images.githubusercontent.com/67548295/128903247-d17e8e76-7127-4c85-83a3-a2203b8b9f25.png)
 
