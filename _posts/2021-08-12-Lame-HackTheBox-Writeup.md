@@ -39,9 +39,9 @@ rtt min/avg/max/mdev = 203.041/203.041/203.041/0.000 ms
 
 Podemos observar que la máquina está activa y que observando el TTL, concluimos que es una máquina Linux.
 
-Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/).
+Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/){:target="\_blank"}{:rel="noopener nofollow"}.
 
-También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier).
+También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"}.
 
 ## Nmap
 
@@ -167,7 +167,7 @@ Samba < 3.6.2 (x86) - Denial of Service (PoC)                                   
 ```
 Pero es con metasploit, y aqui no utilizamos eso.
 
-Asi que lo que he hecho a sido buscar un exploit en github, y he encontrado [este](https://github.com/amriunix/CVE-2007-2447/blob/master/usermap_script.py)
+Asi que lo que he hecho a sido buscar un exploit en github, y he encontrado [este](https://github.com/amriunix/CVE-2007-2447/blob/master/usermap_script.py){:target="\_blank"}{:rel="noopener nofollow"}
 
 Lo descargamos, nos ponemos en escucha con nc, y ejecutamos el exploit con los datos correspondientes:
 
