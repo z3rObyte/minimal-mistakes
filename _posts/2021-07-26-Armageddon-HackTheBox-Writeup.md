@@ -37,9 +37,9 @@ Como podemos ver, la máquina nos ha respondido, eso quiere decir que está acti
 
 También, mirando el valor del TTL puedo deducir que es una máquina Linux.
 
-Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/).
+Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/){:target="\_blank"}{:rel="noopener nofollow"}.
 
-También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier).
+También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"}.
 
 # Nmap
 
@@ -177,7 +177,7 @@ armageddon.htb>> whoami
 apache
 ```
 
-Utilicé este [exploit](https://github.com/dreadlocked/Drupalgeddon2) para llevar a cabo este RCE.
+Utilicé este [exploit](https://github.com/dreadlocked/Drupalgeddon2){:target="\_blank"}{:rel="noopener nofollow"} para llevar a cabo este RCE.
 
 Despues de esto, hago una reverse shell para tener una full TTY mas cómoda que la que me daba el exploit y ganamos acceso:
 
@@ -292,7 +292,7 @@ User brucetherealadmin may run the following commands on armageddon:
     
 ```
 
-Busco en [GTFObins](https://gtfobins.github.io/) y veo que podemos aprovecharnos de esto para escalar privilegios:
+Busco en [GTFObins](https://gtfobins.github.io/){:target="\_blank"}{:rel="noopener nofollow"} y veo que podemos aprovecharnos de esto para escalar privilegios:
 
 ![navegador2](https://user-images.githubusercontent.com/67548295/127034345-c55f19eb-cfc5-401c-a716-1c5fbc7ed0e4.png)
 
@@ -335,13 +335,5 @@ Contraseña:
 
 Sustituí en el /etc/passwd la "x" del usuario root por una contraseña que genere con openssl, para asi poder convertirme en usuario root.
 
-Mas información sobre esto [aqui](https://www.hackingarticles.in/editing-etc-passwd-file-for-privilege-escalation/)
-
-
-
-
-
-
-
-
+Mas información sobre esto [aqui](https://www.hackingarticles.in/editing-etc-passwd-file-for-privilege-escalation/){:target="\_blank"}{:rel="noopener nofollow"}
 
