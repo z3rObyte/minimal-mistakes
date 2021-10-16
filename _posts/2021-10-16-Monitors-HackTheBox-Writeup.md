@@ -12,9 +12,9 @@ categories:
   - Writeup
   - HackTheBox
 tags:
-  - Tshark
-  - FTP
-  - Capabilities
+  - WordPress
+  - Insecure Deserialization
+  - Docker
   - Linux
 ---
 
