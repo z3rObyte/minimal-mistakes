@@ -38,9 +38,9 @@ rtt min/avg/max/mdev = 59.701/59.701/59.701/0.000 ms
 ```
 La máquina nos responde, y mediante el TTL veo que es una máquina Linux.
 
-Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/).
+Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/){:target="\_blank"}{:rel="noopener nofollow"}.
 
-También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier).
+También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"}.
 
 # Nmap
 
@@ -400,7 +400,7 @@ Yo aqui estuve estancado un rato porque pensaba que tenia algo que ver con el ar
 
 Nano tiene una opcion para ejecutar comandos, y estamos corriendo nano como usuario root, así que obtener una shell es sencillo.
 
-Yo en este caso usé [GTFObins](https://gtfobins.github.io/) para ver como era el procedimiento:
+Yo en este caso usé [GTFObins](https://gtfobins.github.io/){:target="\_blank"}{:rel="noopener nofollow"} para ver como era el procedimiento:
 
 ![navegador6](https://user-images.githubusercontent.com/67548295/124475302-13f8c900-dd91-11eb-8d09-1994a0355598.png)
 
@@ -419,10 +419,4 @@ uid=0(root) gid=0(root) groups=0(root)
 # Opinión
 
 La máquina era de dificultad easy pero sin embargo me ha gustado, ha incluido varios conceptos y me ha permitido repasar.
-
-
-
-
-
-
 
