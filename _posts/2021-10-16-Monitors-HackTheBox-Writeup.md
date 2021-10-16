@@ -63,7 +63,7 @@ PORT   STATE SERVICE VERSION
 |   256 69:43:37:6a:18:09:f5:e7:7a:67:b8:18:11:ea:d7:65 (ECDSA)
 |_  256 5d:5e:3f:67:ef:7d:76:23:15:11:4b:53:f8:41:3a:94 (ED25519)
 80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
-|_http-title: Site doesn't have a title (text/html; charset=iso-8859-1).
+|_http-title: Site doesnt have a title (text/html; charset=iso-8859-1).
 |_http-server-header: Apache/2.4.29 (Ubuntu)
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
@@ -144,7 +144,7 @@ Intento buscar vulnerabilidades de la versión de `WordPress` que `whatweb` nos 
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
-└──╼ $searchsploit WordPress 5.5.1
+└──╼ $ searchsploit WordPress 5.5.1
 --------------------------------------------------------------------------------------------------------------------------- ------------------------------
  Exploit Title                                                                                                             |  Path
 --------------------------------------------------------------------------------------------------------------------------- ------------------------------
@@ -161,12 +161,12 @@ Algo potencial a enumerar en `WordPress` son sus `plugins`, en mi caso voy a uti
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
-└──╼ $wpscan --url "http://monitors.htb" --enumerate p
+└──╼ $ wpscan --url "http://monitors.htb" --enumerate p
 _______________________________________________________________
          __          _______   _____
          \ \        / /  __ \ / ____|
           \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
-           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` |  _ \
             \  /\  /  | |     ____) | (__| (_| | | | |
              \/  \/   |_|    |_____/ \___|\__,_|_| |_|
 
@@ -393,7 +393,7 @@ tcp        0      0 127.0.0.1:8443          0.0.0.0:*               LISTEN
 ```
 Pero tras ver que no podemos conectarnos por **SSH** para hacer [port forwarding](https://culturacion.com/que-es-port-forwarding/){:target="\_blank"}{:rel="noopener nofollow"}, sigo enumerando.
 
-Tras ver que nuestro objetivo era `marcus`, procedí a enumerar archivos que fueran de su propiedad en busca de algo que fuese relevante:
+Me acuerdo de que nuestro objetivo era `marcus`, asi procedí a enumerar archivos que fueran de su propiedad en busca de algo que fuese relevante:
 
 ```bash
 www-data@monitors:/$ find / -user marcus 2>/dev/null | grep -v -E "proc|sys"
@@ -469,7 +469,7 @@ Tras observar que este archivo estaba en el **directorio personal** de `marcus`,
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
 └──╼ $ ssh marcus@10.10.10.238
-marcus@10.10.10.238's password: 
+marcus@10.10.10.238 password: 
 Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-151-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com
@@ -520,7 +520,7 @@ Update docker image for production use	-
 ```
 Intento sacar la **máxima información** de la nota haciendo **suposiciones**:
 
-* Es un archivo TODO, es decir de cosas que tiene que hacer.
+* Es un archivo **TODO**, es decir, de cosas a hacer.
 * Habla de una imagen de **docker**, ¿puede que haya contenedores en la máquina?
 * Dice que tiene que actualizar la imagen para usarla en producción, ¿La imagen contendrá algo peligroso como para no ponerla en producción?
 
@@ -541,7 +541,7 @@ Ahora que podemos conectarnos por **SSH**, probemos a hacer un [port forwarding]
 ```bash
 ┌──[z3r0byte@z3r0byte]─[~]
 └──╼ $ ssh marcus@10.10.10.238 -L 8443:127.0.0.1:8443
-marcus@10.10.10.238's password: 
+marcus@10.10.10.238 password: 
 Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-151-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com
@@ -624,7 +624,7 @@ Concluimos que se esta utilizando una versión o variante de [Apache](https://ww
 
 Pruebo a `fuzzear` directorios y recursos para ver si encontramos algo, esto con ayuda de la herramienta `gobuster`:
 
-```gobuster
+```bash
 ┌─[✗]─[z3r0byte@z3r0byte]─[~]
 └──╼ $wfuzz -c --hc=404 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt https://127.0.0.1:8443/FUZZ
  
@@ -777,7 +777,7 @@ Tras investigar en una gran variedad de recursos sobre como escapar de un entorn
 
 Como vemos, tenemos varios métodos para escalar privilegios y escapar de un `docker`, pero tras probar unas cuantas maneras, llego a las `capabilities`.
 
-[Docker Capabilities](https://book.hacktricks.xyz/linux-unix/privilege-escalation/linux-capabilities#capabilities-in-docker-containers){:target="\_blank"}{:rel="noopener nofollow"}
+* [Docker Capabilities](https://book.hacktricks.xyz/linux-unix/privilege-escalation/linux-capabilities#capabilities-in-docker-containers){:target="\_blank"}{:rel="noopener nofollow"}
 
 Si nos fijamos, en el artículo aparece la manera de **listar las capabilities** de un contenedor de `docker`:
 
@@ -893,7 +893,7 @@ Y ejecutaremos este comando en el contenedor de `docker`:
 ```bash
 root@1569c10115cc:/tmp/tmp.aKlQEwETu0# insmod reverse.ko
 ```
-Si lo hemos hecho bien, deberíamos de haber recibido una `shell` como usuario `root` en la máquina vìctima:
+Si hemos hecho todo bien, deberíamos de haber recibido una `shell` como usuario `root` en la máquina vìctima:
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
