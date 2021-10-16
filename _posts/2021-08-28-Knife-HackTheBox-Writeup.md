@@ -22,7 +22,7 @@ tags:
 
 # Enumeración
 
-Empezamos enviando una traza [ICMP](https://es.wikipedia.org/wiki/Protocolo_de_control_de_mensajes_de_Internet) con la herramienta `ping`, con esto veremos el estado de la máquina y su sistema operativo:
+Empezamos enviando una traza [ICMP](https://es.wikipedia.org/wiki/Protocolo_de_control_de_mensajes_de_Internet){:target="\_blank"}{:rel="noopener nofollow"} con la herramienta `ping`, con esto veremos el estado de la máquina y su sistema operativo:
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
@@ -42,8 +42,8 @@ rtt min/avg/max/mdev = 76.791/76.791/76.791/0.000 ms
 Se puede ver que la máquina está activa y que observando el TTL, concluimos que es una máquina Linux.
 
 Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/).
-
-También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier).
+{:target="\_blank"}{:rel="noopener nofollow"}
+También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"}.
 
 ## Nmap
 
@@ -180,7 +180,7 @@ Matching Defaults entries for james on knife:
 User james may run the following commands on knife:
     (root) NOPASSWD: /usr/bin/knife
 ```
-Lo primero que se me ocurre es ir a [GTFObins](https://gtfobins.github.io/) para ver si está comtemplada la explotación de este binario.
+Lo primero que se me ocurre es ir a [GTFObins](https://gtfobins.github.io/){:target="\_blank"}{:rel="noopener nofollow"} para ver si está comtemplada la explotación de este binario.
 
 ![terminal3](https://user-images.githubusercontent.com/67548295/131229016-50388fb4-cada-4992-ae9d-4dece1101dac.png)
 
@@ -205,4 +205,4 @@ Ya a partir de aquí podríamos ver la flag `root.txt` en el directorio /root/ro
 # Resumen y autopwn
 
 En esta máquina hemos explotado una versión de PHP que venía con un backdoor, podíamos ejecutar comandos de forma remota a través de una cabecera modificada.
-En la escalada de privilegios hemos abusado de un binario que podíamos ejecutar como root gracias a un permiso de sudoers. Tambien he creado un script autopwn que te da una shell como root tras ejecutarlo, lo tienes disponible en mi [GitHub](https://github.com/z3rObyte/HackTheBox-Autopwn/blob/main/Knife-autoPWN.py)
+En la escalada de privilegios hemos abusado de un binario que podíamos ejecutar como root gracias a un permiso de sudoers. Tambien he creado un script autopwn que te da una shell como root tras ejecutarlo, lo tienes disponible en mi [GitHub](https://github.com/z3rObyte/HackTheBox-Autopwn/blob/main/Knife-autoPWN.py){:target="\_blank"}{:rel="noopener nofollow"}
