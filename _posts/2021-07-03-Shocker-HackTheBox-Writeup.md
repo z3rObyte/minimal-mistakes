@@ -38,9 +38,9 @@ rtt min/avg/max/mdev = 69.344/69.344/69.344/0.000 ms
 
 La máquina nos contesta, quiere decir que está activa, y además mediante el TTL puedo ver que es una máquina con OS Linux.
 
-Más información sobre la deteccion de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/).
+Más información sobre la deteccion de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/){:target="\_blank"}{:rel="noopener nofollow"}.
 
-También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier).
+También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"}.
 
 # Nmap
 
@@ -106,7 +106,7 @@ Y vemos que hay un directorio cgi-bin. Seguidamente pruebo a fuzzear en ese dire
 
 Ya que si hay archivos y la version de bash es vulnerable, podriamos aprovecharnos de la vulnerabilidad ShellShock para ganar acceso al sistema.
 
-ShellShock es una vulnerabilidad descubierta en 2014 que permite ejecutar codigo de forma remota en la maquina de la victima, [CVE-2014-6271](https://nvd.nist.gov/vuln/detail/CVE-2014-6271)
+ShellShock es una vulnerabilidad descubierta en 2014 que permite ejecutar codigo de forma remota en la maquina de la victima, [CVE-2014-6271](https://nvd.nist.gov/vuln/detail/CVE-2014-6271){:target="\_blank"}{:rel="noopener nofollow"}
 
 Esta vulnerabilidad es posible porque porque bash permite declarar funciones, pero estas no se validan de forma correcta cuando se almacenan en una variable.
 
@@ -205,7 +205,7 @@ User shelly may run the following commands on Shocker:
     (root) NOPASSWD: /usr/bin/perl
 shelly@Shocker:/$ 
 ```
-Hago uso de la utilidad [GTFObins](https://gtfobins.github.io/) para spawnear una bash con perl:
+Hago uso de la utilidad [GTFObins](https://gtfobins.github.io/){:target="\_blank"}{:rel="noopener nofollow"} para spawnear una bash con perl:
 
 ![navegador2](https://user-images.githubusercontent.com/67548295/124355337-1546bc00-dc00-11eb-87aa-a0b3d8374d22.png)
 
