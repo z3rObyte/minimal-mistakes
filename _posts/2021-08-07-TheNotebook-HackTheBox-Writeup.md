@@ -41,9 +41,9 @@ rtt min/avg/max/mdev = 66.233/66.233/66.233/0.000 ms
 
 Podemos observar que la máquina está activa y que observando el TTL, concluimos que es una máquina Linux.
 
-Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/).
+Más información sobre la detección de OS mediante TTL [aquí](https://subinsb.com/default-device-ttl-values/){:target="\_blank"}{:rel="noopener nofollow"}.
 
-También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier).
+También puedes hacer uso de mi herramienta [OSidentifier](https://github.com/z3robyte/OSidentifier){:target="\_blank"}{:rel="noopener nofollow"}.
 
 ## Nmap
 
@@ -131,7 +131,7 @@ Ahora que estamos registrados, enumero un poco más la web hasta que encuentro q
 * La comunicación como tal entre las diferentes aplicaciones se lleva a cabo en el lado del cliente y del servidor.
 
 
-Una vez entendido, con ayuda del Add-on [Cookie editor](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/) copio el token JWT y me dirijo a https://jwt.io para ver que contiene.
+Una vez entendido, con ayuda del Add-on [Cookie editor](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/){:target="\_blank"}{:rel="noopener nofollow"} copio el token JWT y me dirijo a https://jwt.io para ver que contiene.
 
 ![navegador2](https://user-images.githubusercontent.com/67548295/128595061-a337c779-5f79-45c1-9171-2f8a7f05c8df.png)
 
@@ -206,7 +206,7 @@ Entro en el panel de administrador que ha aparecido y vemos que tenemos una opci
 
 ![image](https://user-images.githubusercontent.com/67548295/128596980-f325ecae-2446-4c24-b104-d084893c8c35.png)
 
-Intento subir una reverse shell en php de este [repositorio](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php) cambiando la IP por la mia.
+Intento subir una reverse shell en php de este [repositorio](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php){:target="\_blank"}{:rel="noopener nofollow"} cambiando la IP por la mia.
 
 Y obtenemos shell:
 
@@ -350,13 +350,13 @@ Docker version 18.06.0-ce, build 0ffa825
 
 Busco exploits asociados a esa versión y encuentro uno.
 
-Concretamente el [CVE-2019-5736](https://nvd.nist.gov/vuln/detail/CVE-2019-5736) que nos permite sobrescribir el binario `runc` del host aprovechando la capacidad 
+Concretamente el [CVE-2019-5736](https://nvd.nist.gov/vuln/detail/CVE-2019-5736){:target="\_blank"}{:rel="noopener nofollow"} que nos permite sobrescribir el binario `runc` del host aprovechando la capacidad 
 de ejecutar un comando como root dentro de uno de estos tipos de contenedores.
 Esto se puede hacer con un contenedor existente, al que el atacante tenga previamente acceso de escritura, que pueda ser adjuntado con docker exec.
 
 Que es justamente nuestro caso.
 
-Yo utilicé un PoC de este [repositorio](https://github.com/Frichetten/CVE-2019-5736-PoC)
+Yo utilicé un PoC de este [repositorio](https://github.com/Frichetten/CVE-2019-5736-PoC){:target="\_blank"}{:rel="noopener nofollow"}
 
 Primero descargamos el main.go del repositorio y cambiamos el comando que se ejecutará en el sistema por el que queramos:
 
