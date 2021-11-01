@@ -133,6 +133,7 @@ Service Info: Device: phone
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 121.58 seconds
 ```
+
 | Parámetro | Acción |
 |:---------:|:------:|
 | `-p-` | Es una forma de especificar que queremos escanear todos los puertos existentes, los 65535. |
@@ -159,9 +160,9 @@ Me llama la atención el puerto sostenido por el servicio `ES File Explorer` e i
 
 ![image](https://user-images.githubusercontent.com/67548295/139671914-67c50053-8098-496e-b258-f4e566232a45.png)
 
-Al intentar buscar información sobre este puerto vemos que se hace mención a una vulnerabilidad.
+Al intentar buscar información sobre este puerto vemos que se hace mención a una **vulnerabilidad**.
 
-Podemos ver su [identificador CVE](https://www.redhat.com/es/topics/security/what-is-cve){:target="\_blank"}{:rel="noopener nofollow"} y también podemos comprobar que existen modulos de `metasploit` para explotar esta vulnerabilidad.
+Podemos ver su [identificador CVE](https://www.redhat.com/es/topics/security/what-is-cve){:target="\_blank"}{:rel="noopener nofollow"} y también podemos comprobar que existen **modulos** de `metasploit` para explotar esta vulnerabilidad.
 
 Pero en este blog no utilizamos `metasploit`, asi que me apoyo de un [_Proof of concept_ de GitHub](https://github.com/fs0c131y/ESFileExplorerOpenPortVuln){:target="\_blank"}{:rel="noopener nofollow"} para explotar la vulnerabilidad de forma manual.
 
@@ -248,7 +249,7 @@ Podemos ver 4 archivos de imágen, pero hay uno que llama la atención.
 
 ¿`creds.jpg`? ¿Credenciales?
 
-Uso la función para descargar archivos que tiene implementado el exploit para examinar más en detalle esta imágen, que concretamente está localizada en `/storage/emulated/0/DCIM/creds.jpg`:
+Uso la función para **descargar archivos** que tiene implementado el exploit para examinar más en detalle esta imágen, que concretamente está localizada en `/storage/emulated/0/DCIM/creds.jpg`:
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~/Descargas]
@@ -270,9 +271,9 @@ Parece ser que se ha descargado, veamos la imagen para ver de que se trata:
 
 ¡Vaya! Parece ser un usuario y una contraseña.
 
-Además la máquina tiene un puerto con SSH abierto. ¿Qué más se puede pedir?
+Además la máquina tiene un puerto con **SSH** abierto. ¿Qué más se puede pedir?
 
-Probemos a conectarnos por SSH con estas credenciales:
+Probemos a conectarnos por **SSH** con estas credenciales:
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~/Descargas]
@@ -292,7 +293,7 @@ fXXXXXXXXXXXXXXXXXXXXXXXXXXXXX0
 ```
 # Root.txt 
 
-Tras enumerar el sistema durante un buen rato, me doy cuenta de que hay puertos abiertos internamente:
+Tras enumerar el sistema durante un buen rato, me doy cuenta de que hay puertos abiertos **internamente**:
 
 ```bash
 :/sdcard $ netstat -nat | grep "LISTEN"                                        
@@ -307,7 +308,7 @@ Tenemos varios puertos altos que corresponden al software `ES file Explorer` y a
 
 Pero me llama la atención el puerto `5555`.
 
-Investigo sobre este puerto en Internet:
+Investigo sobre este puerto en `Internet`:
 
 ![image](https://user-images.githubusercontent.com/67548295/139686650-e41c6bde-0e91-4cc6-97ae-1e016e738ac6.png)
 
@@ -464,5 +465,5 @@ fXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX5
 
 # Conclusión
 
-En esta máquina Android (Linux), para acceder como usuario no privilegiado, hemos explotado una vulnerabilidad de una versión desactualizada del software `ES file explorer` con el que hemos podido visualizar una imágen con credenciales, las cuales hemos utilizado para conectarnos a la máquina por SSH.
-Para obtener acceso como usuario root, nos hemos aprovechado de un puerto abierto internamente que correspondía con `ADB` para generar una shell como root.
+En esta máquina **Android (Linux)**, para acceder como usuario no privilegiado, hemos explotado una vulnerabilidad de una **versión desactualizada** del software `ES file explorer` con el que hemos podido visualizar una imágen con **credenciales**, las cuales hemos utilizado para conectarnos a la máquina por **SSH**.
+Para obtener acceso como usuario root, nos hemos aprovechado de un **puerto abierto internament**e que correspondía con `ADB` para generar una shell como root.
