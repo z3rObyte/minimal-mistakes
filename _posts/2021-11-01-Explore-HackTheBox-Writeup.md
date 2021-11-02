@@ -12,9 +12,9 @@ categories:
   - Writeup
   - HackTheBox
 tags:
-  - WordPress
-  - Insecure Deserialization
-  - Docker
+  - Arbitrary File Read
+  - ADB
+  - Android
   - Linux
 ---
 
