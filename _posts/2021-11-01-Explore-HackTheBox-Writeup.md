@@ -466,4 +466,4 @@ fXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX5
 # Conclusión
 
 En esta máquina **Android (Linux)**, para acceder como usuario no privilegiado, hemos explotado una vulnerabilidad de una **versión desactualizada** del software `ES file explorer` con el que hemos podido visualizar una imágen con **credenciales**, las cuales hemos utilizado para conectarnos a la máquina por **SSH**.
-Para obtener acceso como usuario root, nos hemos aprovechado de un **puerto abierto internament**e que correspondía con `ADB` para generar una shell como root.
+Para obtener acceso como usuario root, nos hemos aprovechado de un **puerto abierto internamente** que correspondía con `ADB` para generar una shell como root.
