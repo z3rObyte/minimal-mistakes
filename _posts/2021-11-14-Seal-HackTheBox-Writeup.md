@@ -122,6 +122,7 @@ PORT     STATE SERVICE    VERSION
 |_http-title: Site doesnt have a title (text/html;charset=utf-8).
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
+
 | Parámetro | Acción |
 |:---------:|:------:|
 | `-p-` | Es una forma de especificar que queremos escanear todos los puertos existentes, los 65535. |
@@ -146,7 +147,7 @@ Podemos ver 3 puertos abiertos:
 Empiezo enumerando el puerto `443` con la herramienta `whatweb`:
 
 ```bash
-┌─hack─[z3r0byte@z3r0byte]─[~/Descargas]
+┌──[z3r0byte@z3r0byte]─[~/Descargas]
 └──╼ $ whatweb https://10.10.10.250
 https://10.10.10.250 [200 OK] Bootstrap, Country[RESERVED][ZZ], Email[admin@seal.htb], HTML5, HTTPServer[Ubuntu Linux][nginx/1.18.0 (Ubuntu)]
 IP[10.10.10.250], JQuery[3.0.0], Script, Title[Seal Market], X-UA-Compatible[IE=edge], nginx[1.18.0]
@@ -189,9 +190,9 @@ Uso el navegador para acceder a este puerto:
 
 ![image](https://user-images.githubusercontent.com/67548295/141676303-4855544e-0cc6-4069-abf3-7c7e9d1b2ef9.png)
 
-Vaya, se aloja el software [GitBucket](https://ubunlog.com/gitbucket-un-sistema-de-desarrollo-colaborativo-al-estilo-github/){:target="\_blank"}{:rel="noopener nofollow"}, un entorno de desarrollo ambientado en GitHub pero autohospedado.
+Vaya, se aloja el software [GitBucket](https://ubunlog.com/gitbucket-un-sistema-de-desarrollo-colaborativo-al-estilo-github/){:target="\_blank"}{:rel="noopener nofollow"}, un entorno de desarrollo ambientado en `GitHub` pero autohospedado.
 
-Bien, no disponemos de credenciales para iniciar sesión, así que opto por crear una cuenta.
+Bien, no disponemos de **credenciales** para iniciar sesión, así que opto por crear una cuenta.
 
 ![image](https://user-images.githubusercontent.com/67548295/141676559-f42d16d8-acfc-43b4-9497-51a647833805.png)
 
@@ -199,13 +200,13 @@ Bien, creamos la cuenta e iniciamos sesión.
 
 ![image](https://user-images.githubusercontent.com/67548295/141676653-98988b28-c64f-40ec-8a16-51b4bbf93ae7.png)
 
-Al iniciar sesión me doy cuenta de que aquí se aloja el código fuente de la página que vimos al principio.
+Al iniciar sesión me doy cuenta de que aquí se aloja el **código fuente** de la página que vimos al principio.
 
 Accedo al repositorio `seal_market` y me encuentro con lo siguiente:
 
 ![image](https://user-images.githubusercontent.com/67548295/141676730-b17b8a79-b1de-45c4-baff-120e8d5b5c3a.png)
 
-Vemos una sección TODO y por lo que se ve hay desplegado un [Apache Tomcat](https://www.hostdime.com.ar/blog/que-es-apache-tomcat/){:target="\_blank"}{:rel="noopener nofollow"}.
+Vemos una sección **TODO** y por lo que se ve hay desplegado un [Apache Tomcat](https://www.hostdime.com.ar/blog/que-es-apache-tomcat/){:target="\_blank"}{:rel="noopener nofollow"}.
 
 Me llama la atención lo de `Tomcat` asi que accedo al directorio con el mismo nombre.
 
@@ -215,13 +216,13 @@ Se me ocurre mirar entre los [commits](https://mariogl.com/aprender-git-que-es-u
 
 ![image](https://user-images.githubusercontent.com/67548295/141677127-646eda20-2497-4f3c-b88d-4c2fa1062170.png)
 
-Vemos 2 commits, me llama la atención el que se llama "_Updating tomcat configuration_".
+Vemos 2 **commits**, me llama la atención el que se llama "_Updating tomcat configuration_".
 
-Hago click en el identificador de este commit y vemos algo interesante:
+Hago click en el identificador de este **commit** y vemos algo interesante:
 
 ![image](https://user-images.githubusercontent.com/67548295/141677235-2c64db55-75c3-4698-bc85-405c72ebbadf.png)
 
-Así es, unas jugosas credenciales de `Tomcat`.
+Así es, unas jugosas **credenciales** de `Tomcat`.
 
 Vale, sabemos que hay alojado un `Apache Tomcat` y tenemos credenciales, pero... ¿Donde está?
 
@@ -271,7 +272,7 @@ Requests/sec.: 85.54370
 | `--hw=0` | Oculta las respuestas que contengan 0 palabras |
 | `-w` | Especifica el diccionario que queremos utilizar |
 
-Nos reporta varias rutas y si nos fijamos, en unas nos devuelve un código de estado `403 Forbidden` y en otras un `401 Unauthorized`.
+Nos reporta varias rutas y si nos fijamos, en unas nos devuelve un **código de estado** `403 Forbidden` y en otras un `401 Unauthorized`.
 
 Naveguemos hasta la ruta `/manager/status` por ejemplo, a ver que encontramos:
 
@@ -308,7 +309,7 @@ Mmmh, `Path Traversal`, suena interesante, echemos un vistazo a esta página:
 ![image](https://user-images.githubusercontent.com/67548295/141686519-bbce9a1c-e6fa-41ce-ad94-e6dda0b8a38f.png)
 Fuente: [Tomcat path traversal via reverse proxy mapping ...](https://www.acunetix.com/vulnerabilities/web/tomcat-path-traversal-via-reverse-proxy-mapping/){:target="\_blank"}{:rel="noopener nofollow"}
 
-Como dice este artículo, la vulnerabilidad reside en que se tomará la secuencia /..;/ como /../, esto nos permite retroceder directorios y acceder a sitios no autorizados.
+Como dice este artículo, la vulnerabilidad reside en que se tomará la secuencia `/..;/` como `/../`, esto nos permite **retroceder directorios** y acceder a sitios no autorizados.
 
 Veamos esto en la practica.
 
@@ -353,6 +354,12 @@ Final size of war file: 13321 bytes
 Saved as: not-a-reverse-shell.war
 ```
 
+| Parámetro | Acción |
+|:---------:|:------:|
+| `-p` | Con este parámetro especificamos el tipo de payload que queremos utilizar |
+| `-f` | Este parámetro dice le formato con el que se exportará el archivo |
+| `-o` | Este sirve para elegir el nombre con el que se exportará el archivo |
+
 ### 2º Paso - Abrimos BurpSuite para que las peticiones pasen a través de este
 
 ![image](https://user-images.githubusercontent.com/67548295/141690151-d9359156-6043-4a71-8e98-d4074ff4322f.png)
@@ -385,11 +392,11 @@ Desde el `BurpSuite`, tendremos que cambiar esta por `/manager/status/..;/html/u
 
 ### 6º Paso - Accedemos al recurso que se ha creado con curl
 
-A partir de aquí, si lo hemos hecho bien, se habrá creado un recurso en la raiz del servidor web con el nombre que le hayamos puesto al archivo.
+A partir de aquí, si lo hemos hecho bien, se habrá creado un recurso en la **raiz del servidor web** con el nombre que le hayamos puesto al archivo.
 
 En mi caso "not-a-reverse-shell"
 
-Hagamos una petición a este recurso para obtener la reverse shell:
+Hagamos una **petición** a este recurso para obtener la **reverse shell**:
 
 ![acceso](https://user-images.githubusercontent.com/67548295/141691099-6b316063-8979-439d-80da-6f858e6965c2.gif)
 
@@ -428,13 +435,13 @@ drwx------ 2 luis luis     4096 May  7  2021 .ssh
 
 Se pueden ver varias cosas aquí.
 
-Por un lado vemos la flag **user.txt**, la cual no podemos ver porque no contamos con permisos de lectura sobre este.
+Por un lado vemos la flag **user.txt**, la cual no podemos ver porque no contamos con **permisos de lectura** sobre este.
 
 Y por otro lado veo el directorio `.ssh`, en el cual se suelen alojar claves `id_rsa` que sirven para conectarse por `SSH` sin proporcionar contraseña, pero tampoco tenemos acceso a este directorio.
 
 Tengo esto en cuenta y sigo enumerando el sistema.
 
-Pruebo a hacer uso de la herramienta [Pspy](https://github.com/DominicBreuker/pspy){:target="\_blank"}{:rel="noopener nofollow"} para monitorear los procesos de la máquina.
+Pruebo a hacer uso de la herramienta [Pspy](https://github.com/DominicBreuker/pspy){:target="\_blank"}{:rel="noopener nofollow"} para **monitorear los procesos** de la máquina.
 
 Descargo el binario compilado y lo transfiero a la máquina, una vez hecho esto, lo ejecuto:
 
@@ -442,7 +449,7 @@ Descargo el binario compilado y lo transfiero a la máquina, una vez hecho esto,
 
 ![image](https://user-images.githubusercontent.com/67548295/141692278-c624fcc2-4457-4dfb-a0ed-d51ac1210209.png)
 
-Consigo ver algo interesante, una [tarea cron](https://www.dondominio.com/help/es/252/que-son-las-tareas-cron/){:target="\_blank"}{:rel="noopener nofollow"} está iniciando sesión como el usuario luis y está ejecutando la herramienta `ansible-playbook` pasandole como argumento una ruta.
+Consigo ver algo interesante, una [tarea cron](https://www.dondominio.com/help/es/252/que-son-las-tareas-cron/){:target="\_blank"}{:rel="noopener nofollow"} está iniciando sesión como el usuario `luis` y está ejecutando la herramienta `ansible-playbook` pasandole como argumento una ruta.
 
 Antes de nada hay que saber que es [Ansible-playbook](https://www.redhat.com/es/topics/automation/learning-ansible-tutorial), y es es un motor open source que automatiza los procesos de IT.
 
@@ -457,7 +464,7 @@ tomcat@seal:/dev/shm$ cat /opt/backups/playbook/run.yml
   - name: Server Backups
     archive:
       path: /opt/backups/files/
-      dest: "/opt/backups/archives/backup-{{ansible_date_time.date}}-{{ansible_date_time.time}}.gz"
+      dest: "/opt/backups/archives/backup-\{\{ansible_date_time.date\}\}-\{\{ansible_date_time.time\}\}.gz"
   - name: Clean
     file:
       state: absent
@@ -492,22 +499,22 @@ Hagamos esto:
 
 ### 1º Paso - Creamos el link simbólico
 
-Creamos el link simbólico del recurso `/home/luis/.ssh` en el directorio `/var/lib/tomcat9/webapps/ROOT/admin/dashboard/uploads/`
+Creamos el **link simbólico** del recurso `/home/luis/.ssh` en el directorio `/var/lib/tomcat9/webapps/ROOT/admin/dashboard/uploads/`
 
 ```bash
 yomcat@seal:/$ ln -s /home/luis/.ssh/ /var/lib/tomcat9/webapps/ROOT/admin/dashboard/uploads
 tomcat@seal:/$ echo $?
 0
 ```
-El link simbólico se ha creado correctamente ya que el código de estado es 0 (exitoso)
+El **link simbólico** se ha creado correctamente ya que el código de estado es `0` (exitoso)
 
 ### 2º Paso - Esperamos a que la tarea cron se ejecute
 
-Esperamos 1 minuto a que se ejecute la tarea cron y se cree el backup en la ruta `/opt/backups/archives`
+Esperamos 1 minuto a que se ejecute la `tarea cron` y se cree el **backup** en la ruta `/opt/backups/archives`
 
 ### 3º Trasferimos el backup a nuestra máquina
 
-Accedemos a la ruta `/opt/backups/archives` y transferimos a nuestra máquina el backup más reciente que haya.
+Accedemos a la ruta `/opt/backups/archives` y transferimos a nuestra máquina el **backup más reciente** que haya.
 
 ```bash
 tomcat@seal:/$ cd /opt/backups/archives/
@@ -594,7 +601,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 # Root.txt
 
-Enumerando el sistema en busca de un vector para escalar privilegios, me doy cuenta de que el usuario luis tiene un permisos asignados:
+Enumerando el sistema en busca de un **vector** para escalar privilegios, me doy cuenta de que el usuario `luis` tiene un permisos asignados:
 
 ```bash
 luis@seal:~$ sudo -l 
@@ -641,6 +648,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 # Conclusión
 
-En esta máquina hemos ganado acceso inicial como usuario no privilegiado haciendo uso de unas **credenciales en texto claro** recogidas de un servicio alojado en el puerto `8080`para acceder a un `Apache Tomcat` y ganar acceso mediante una reverse shell.
+En esta máquina hemos ganado acceso inicial como usuario no privilegiado haciendo uso de unas **credenciales en texto claro** recogidas de un servicio alojado en el puerto `8080`para acceder a un `Apache Tomcat` y ganar acceso mediante una **reverse shell**.
 Escalamos privilegios hacia un usuario con más permisos aprovechandonos de una `tarea cron` ejecutada por ese usuario para lograr acceder a su directorio `.ssh` y poder conectarnos usando su clave `id_rsa`.
-Finalmente ganamos control total del sistema abusando de un permiso que se nos asignaba pudiendo correr el binario `ansible-playbook` como el usuario `root` y generando una shell como el mismo usuario.
+Finalmente ganamos **control total** del sistema abusando de un permiso que se nos asignaba pudiendo correr el binario `ansible-playbook` como el usuario `root` y generando una shell como el mismo usuario.
