@@ -4,7 +4,7 @@ main:
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
    - title: "Home"
      url: /
-   - title: "Articulos"
+   - title: "Artículos"
      url: /year-archive/
    - title: "Categorias"
      url: /categories/
