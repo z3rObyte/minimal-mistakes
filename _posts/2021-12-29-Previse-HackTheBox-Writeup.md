@@ -581,7 +581,7 @@ Probemos a conectarnos por **SSH** como el usuario `m4lwhere` proporcionando est
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
 └──╼ $ ssh m4lwhere@10.10.11.104
-m4lwhere@10.10.11.104's password: 
+m4lwhere@10.10.11.104 password: 
 Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-151-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com
