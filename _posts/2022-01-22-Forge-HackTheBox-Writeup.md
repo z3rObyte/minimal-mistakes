@@ -145,7 +145,7 @@ Processed Requests: 307
 Filtered Requests: 306
 Requests/sec.: 0
 ```
- 
+
 | Parámetro | Acción |
 |:---------:|:-------|
 | `-c` | Reporta el output del programa con colores |
@@ -156,6 +156,7 @@ Requests/sec.: 0
 | `-u` | Parámetro usado para especificar el target |
 | `FUZZ` | Esta palabra la deberemos colocar donde queramos que la herramienta _fuzzee_ |
 | `-t` | Este parametro hace referencia a la palabra _threads_ y sirve para enviar peticiones simultaneamente haciendo el _fuzzeo_ más rápido |
+
 Conseguimos descubrir un subdominio con nombre `admin`. Bien, añadamoslo al archivo `/etc/hosts` para poder acceder a él.
 
 ```bash
