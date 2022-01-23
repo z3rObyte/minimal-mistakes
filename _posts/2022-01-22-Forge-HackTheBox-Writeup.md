@@ -145,7 +145,7 @@ Processed Requests: 307
 Filtered Requests: 306
 Requests/sec.: 0
 ```
-
+ 
 | Parámetro | Acción |
 |:---------:|:-------|
 | `-c` | Reporta el output del programa con colores |
