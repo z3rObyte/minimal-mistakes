@@ -1,7 +1,7 @@
 ---
 title: "Forge - HTB Writeup"
 layout: single
-excerpt: "Forge es una máquina de dificultad media de la plataforma de HackTheBox. En esta máquina de un SSRF para obtener una acceso inicial. Para escalar privilegios abusamos de un script en python el cual podíamos ejecutar como root"
+excerpt: "Forge es una máquina de dificultad media de la plataforma de HackTheBox. En esta máquina nos aprovechamos de un SSRF para obtener una acceso inicial. Para escalar privilegios abusamos de un script en python el cual podíamos ejecutar como root"
 show_date: true
 classes: wide
 header:
@@ -195,7 +195,7 @@ Esta vulnerabilidad ocurre cuando el atacante puede acceder a recursos internos 
  
  Vaya, parece que esta URL esta en una **lista negra**, es decir, no se nos permitirá introducir esta url.
  
- Tras pasar un buen rato intentando hacer un **bypass** a este _blacklist_, lo consigo usando ***mayúsculas**.
+ Tras pasar un buen rato intentando hacer un **bypass** a este _blacklist_, lo consigo usando **mayúsculas**.
  
  Con solo poner `http://ADMIN.FORGE.HTB` ya conseguimos bypassear esto.
  
@@ -489,7 +489,7 @@ invalid literal for int() with base 10: b''
 ```
 ---
 
-Ahora para acceder como root introduciremos el siguiente comando:
+Ahora para acceder como root, saldremos de la consola interactiva de pdb e introduciremos el siguiente comando:
 
 > `bash -p`
 
@@ -506,7 +506,7 @@ bash-5.0# head --bytes 12 /root/root.txt | xargs
 ```
 # Conclusión
 
-En esta máquina hemos explotado un **SSRF** para conseguir una **clave privada de SSH** para obtener acceso inicial. Luego de esto, nos aprovechamos de un script mal planteado el cual podíamos ejecutar como usuario **root** para escalar privilegios.
+En esta máquina hemos explotado un **SSRF** para conseguir una **clave privada de SSH** para obtener acceso inicial. Luego de esto, nos aprovechamos de un script mal planteado y con permisos inadecuados el cual podíamos ejecutar como usuario **root** para escalar privilegios.
 
 
 
