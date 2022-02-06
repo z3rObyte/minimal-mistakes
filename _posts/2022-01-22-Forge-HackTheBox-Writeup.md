@@ -22,7 +22,7 @@ tags:
 
 # Enumeración
 
-Empezamos con la fase de enumeración enviando una paquete [ICMP](https://es.wikipedia.org/wiki/Protocolo_de_control_de_mensajes_de_Internet){:target="\_blank"}{:rel="noopener nofollow"} a la máquina víctima con la herramienta `ping`, con esto veremos su estado y su **sistema operativo**:
+Empezamos con la fase de enumeración enviando un paquete [ICMP](https://es.wikipedia.org/wiki/Protocolo_de_control_de_mensajes_de_Internet){:target="\_blank"}{:rel="noopener nofollow"} a la máquina víctima con la herramienta `ping`, con esto veremos su estado y su **sistema operativo**:
 
 ```bash
 ┌─[z3r0byte@z3r0byte]─[~]
