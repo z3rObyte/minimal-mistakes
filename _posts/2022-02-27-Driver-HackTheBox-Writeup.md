@@ -261,7 +261,7 @@ ping 1.1.1.1
 ```
 Vemos en el historial que se ha añadido una impresora.
 
-Si sueles seguir noticiarios de ciberseguridad, probablemente hayas oido hablar de la vulnerabilidad **PrintNightmare**, la cual se aprovecha delservicio de impresión para instalar **drivers maliciosos** con altos privilegios.
+Si sueles seguir noticiarios de ciberseguridad, probablemente hayas oido hablar de la vulnerabilidad **PrintNightmare**, la cual se aprovecha del servicio de impresión para instalar **drivers maliciosos** con altos privilegios.
 
 Para confirmar esto, veamos si el servicio `Spoolsv` está ejecutándose:
 
@@ -332,7 +332,7 @@ Restricted
 ```
 Comprobamos que está **restringida** la ejecución de scripts.
 
-Bien, hay varias maneras de _bypassear_ esta restricción. Una de ellas es simplemente cambiar los política para nuestro usuario, de la siguiente manera:
+Bien, hay varias maneras de _bypassear_ esta restricción. Una de ellas es simplemente cambiar la política para nuestro usuario, de la siguiente manera:
 
 ```powershell
 *Evil-WinRM* PS C:\Users\tony\Contacts> Set-Executionpolicy -Scope CurrentUser -ExecutionPolicy UnRestricted
