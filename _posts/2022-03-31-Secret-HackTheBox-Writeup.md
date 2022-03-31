@@ -1,7 +1,7 @@
 ---
 title: "Secret - HTB Writeup"
 layout: single
-excerpt: "Secret es una maquína de dificultad fácil de la plataforma de HackTheBox. En esta máquina ganamos acceso inicialmente aprovechandonos de una API mal configurada. Para escalar privilegios, abusamos de un binario SUID mal planteado para leer la clave id_rsa de root para acceder como este usuario."
+excerpt: "Secret es una máquina de dificultad fácil de la plataforma de HackTheBox. En esta máquina ganamos acceso inicialmente aprovechandonos de una API mal configurada. Para escalar privilegios, abusamos de un binario SUID mal planteado para leer la clave id_rsa de root y así poder acceder como este."
 show_date: true
 classes: wide
 header:
