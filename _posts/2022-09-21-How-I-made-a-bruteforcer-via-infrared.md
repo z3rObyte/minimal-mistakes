@@ -129,7 +129,7 @@ Bien, para montar tu entorno para enviar tus secuencias desde tu teléfono (tien
 Sé que esta app está en la [Play Store](https://play.google.com/store/apps){:target="\_blank"}{:rel="noopener nofollow"} pero debido a un cambio de políticas que hubo ya no está siendo actualizada en esta plataforma. Podemos descargar la última versión desde [aquí](https://f-droid.org/en/packages/com.termux/){:target="\_blank"}{:rel="noopener nofollow"}
 
 ###### 2º Paso | Actualizar repositorios e instalar algunos paquetes
-Una vez descargada e instalada lal app, entraremos y ejcutaremos los siguientes comandos:
+Una vez descargada e instalada la app, entraremos y ejcutaremos los siguientes comandos:
 ```sh
 apt update && pkg upgrade -y
 
