@@ -7,7 +7,7 @@ classes: wide
 header:
   teaser: "https://user-images.githubusercontent.com/67548295/136782753-9d450e38-a300-42ac-ba6a-11eec88dcfd9.png"
   teaser_home_page: true
-  icon: "assets/images/icons/HackTheBox-icon.png"
+  icon: "https://user-images.githubusercontent.com/67548295/191989683-8e498bfd-d8dd-4e45-b929-f557100f9648.png"
 categories:
   - Writeup
   - HackTheBox
