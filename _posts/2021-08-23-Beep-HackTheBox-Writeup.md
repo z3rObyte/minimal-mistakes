@@ -13,7 +13,7 @@ categories:
   - HackTheBox
 tags:
   - LFI
-  - Shellshock
+  - ShellShock
   - Elastix
   - Linux
 ---
