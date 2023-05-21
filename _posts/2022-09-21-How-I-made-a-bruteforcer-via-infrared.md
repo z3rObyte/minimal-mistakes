@@ -181,7 +181,7 @@ Una vez hecho eso, hacemos clic en el botón **Open last export** y podremos ver
 
 Para hacer el **pin bruteforcer** necesitaríamos el código Pronto HEX de todos los números, pero por suerte alguien ya nos ha proporcionado esta lista en un [foro](https://www.remotecentral.com/cgi-bin/mboard/rc-discrete/thread.cgi?7244){:target="\_blank"}{:rel="noopener nofollow"}
 
-### Creación del script
+## Creación del script
 Una vez obtuve todos los códigos **Pronto HEX**, hice un script con para convertirlos (con las **fórmulas** que vimos anteriormente) a periodos de encendido y apagado para que **Termux** pudiese interpretarlos.
 
 ```python
