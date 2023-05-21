@@ -125,7 +125,7 @@ author:
       # url: "https://instagram.com/"
       
     - label: "HackTheBox"
-      icon: "fa-sharp fa-regular fa-cube"
+      icon: "fab fa-fw fa-cube"
       url: "https://www.hackthebox.com/profile/420035"
 
 # Site Footer
