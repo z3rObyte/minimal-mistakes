@@ -20,7 +20,7 @@ title                    : "Z3r0's Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "z3r0"
-description              : "An amazing website."
+description              : "A wonderful cybersecurity blog"
 url                      : "https://z3rObyte.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  :  # the subpath of your site, e.g. "/blog"
 repository               : "z3rObyte/z3rObyte.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -124,9 +124,9 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
       
-    - label: "Donar"
-      icon: "fab fa-fw fa-paypal"
-      url: "https://paypal.me/z3r0byte"
+    - label: "HackTheBox"
+      icon: "fa-sharp fa-regular fa-cube"
+      url: "https://www.hackthebox.com/profile/420035"
 
 # Site Footer
 footer:
@@ -149,6 +149,9 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
+    - label: "HackTheBox"
+      icon: "fa-sharp fa-regular fa-cube"
+      url: "https://www.hackthebox.com/profile/420035"
 
 
 # Reading Files
