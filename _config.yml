@@ -150,7 +150,7 @@ footer:
       icon: "fab fa-fw fa-instagram"
       # url:
     - label: "HackTheBox"
-      icon: "fa-sharp fa-regular fa-cube"
+      icon: "fas fa-regular fa-cube"
       url: "https://www.hackthebox.com/profile/420035"
 
 
