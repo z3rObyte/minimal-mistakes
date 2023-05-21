@@ -153,7 +153,7 @@ Si lo ejecutamos desde **Termux** con el parámetro `-h` veremos las opciones qu
 
 Por un lado tendríamos que especificar el **carrier frequency** con el parámetro `-f` y luego los **intervalos** de encendido y apagado separados por comas. Estos dos valores los podemos sacar del formato **Ponto HEX**, pero por ahora lo que tenemos es los valores de **device**, **subdevice** y **function**. ¿Cómo convertimos esos valores a **Pronto HEX**?
 
-### IrScrutinizer
+# IrScrutinizer
 
 Hay un programa maravilloso llamado [IrScrutinizer](http://www.hifi-remote.com/wiki/index.php?title=IrScrutinizer_Guide){:target="\_blank"}{:rel="noopener nofollow"} que automatiza esta tarea y muchísimas más. Ahorra el dolor de cabeza de tener que hacerlo de forma manual. Podremos instalarlo desde su [repositorio en GitHub](https://github.com/bengtmartensson/IrScrutinizer/releases/tag/Version-2.3.1){:target="\_blank"}{:rel="noopener nofollow"}, si manejas un sistema Linux, descarga el [AppImage](https://github.com/bengtmartensson/IrScrutinizer/releases/download/Version-2.3.1/IrScrutinizer-2.3.1-x86_64.AppImage){:target="\_blank"}{:rel="noopener nofollow"} o si manejas un sistema Windows pues descarga el [EXE](https://github.com/bengtmartensson/IrScrutinizer/releases/download/Version-2.3.1/IrScrutinizer-2.3.1.exe){:target="\_blank"}{:rel="noopener nofollow"}
 
