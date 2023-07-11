@@ -16,6 +16,7 @@ tags:
   - RCE
   - Cron
   - Ansible
+  - Linux
 ---
 
 ![Inject](https://github.com/z3rObyte/z3rObyte.github.io/assets/67548295/ca713b67-3ac2-4fd7-87fb-9d1b91033622)
