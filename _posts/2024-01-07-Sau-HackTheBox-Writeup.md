@@ -44,8 +44,8 @@ PORT      STATE SERVICE VERSION
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 116.82 seconds
-
 ```
+
 Parámetro | Explícación |
 |:---------:|:------:|
 | `-p-` | Es una forma de especificar que queremos escanear todos los puertos existentes, los 65535. |
@@ -69,7 +69,7 @@ Visito este puerto desde el navegador y vemos lo siguiente:
 *Request Baskets*, no sé lo que es así que lo busco en google
 ![image](https://github.com/z3rObyte/z3rObyte.github.io/assets/67548295/86fadf2e-1880-4074-970f-10d46928747b)
 
-Al parecer es un proyecto de código abierto alojado en **GitHub** para inspeccionar peticiones, tipo [RequestBin](https://pipedream.com/requestbin)
+Al parecer es un proyecto de código abierto alojado en **GitHub** para inspeccionar peticiones, tipo [RequestBin](https://pipedream.com/requestbin).
 Tambíen, con solo buscar el nombre del software, nos aparece que la versión 1.2.1 es vulnerable a **SSRF**
 
 Si tenemos buena vista notamos que la versión aparece en la parte baja del dashboard:
@@ -96,10 +96,10 @@ Ahora podemos inspeccionar esa petición en nuestra instancia personal:
 ![image](https://github.com/z3rObyte/z3rObyte.github.io/assets/67548295/a804ce37-c9ae-4ddb-b274-c42f4956433e)
 
 Así funciona, no tiene más.
-Ahora inspeccionemos de que se trata la vulnerabilidad que vimos antes
+Ahora inspeccionemos de que se trata la vulnerabilidad que vimos antes.
 
 ###  Reviewing CVE-2023-27163
-Esta vulnerabilidad consiste en un **SSRF** que permite a un atacante acceder a recursos de red internos, todo mediante una petición modificada a la API 
+Esta vulnerabilidad consiste en un **SSRF** que permite a un atacante acceder a recursos de red internos, todo mediante una petición modificada a la API .
 > [Request Baskets v1.2.1 SSRF](https://nvd.nist.gov/vuln/detail/CVE-2023-27163)
 
 Aquí es donde me estanqué haciendo la máquina, porque no sabía a que recurso interno apuntar.
@@ -116,7 +116,7 @@ PORT      STATE    SERVICE
 8338/tcp  filtered unknown
 55555/tcp open     unknown
 ```
-Vemos que tenemos puertos filtrados, que significa que Nmap no pudo averiguar si el puerto estaba cerrado o abierto debido a un firewall o regla de filtado.
+Vemos que tenemos puertos filtrados, que significa que `nmap` no pudo averiguar si el puerto estaba cerrado o abierto debido a un firewall o regla de filtado.
 Podemos ver la diferencia entre un puerto filtrado y uno cerrado con la herramienta `nc`
 ##### Closed port
 ```bash
@@ -142,7 +142,7 @@ Ncat: TIMEOUT.
 Recibimos un `connection timeout`.
 
 ### Exploting CVE-2023-27163
-Suponiendo que esos dos puertos filtrados son servicios internos de la máquina, procedo con la explotación del **SSRF**
+Suponiendo que esos dos puertos filtrados son servicios internos de la máquina, procedo con la explotación del **SSRF**.
 
 > [PoC of SSRF on Request-Baskets (CVE-2023-27163)](https://github.com/entr0pie/CVE-2023-27163)
 
@@ -213,8 +213,8 @@ A partir de aquí podemos ver la flag `user.txt` en `/home/puma`:
 puma@sau:~$ head --bytes 16 user.txt ;echo
 7d709839f637a483
 ```
-# Root.txt
 
+# Root.txt
 Si hacemos `sudo -l` veremos lo siguiente:
 ```bash
 puma@sau:~$ sudo -l
@@ -232,6 +232,7 @@ puma@sau:~$ stty rows 10 columns 80 #simulamos tener pantalla de gameboy por lo 
 ```
 
 ![image](https://github.com/z3rObyte/z3rObyte.github.io/assets/67548295/96df4e55-1e01-4aa4-9c38-4b3054003720)
+
 La máquina piensa que nuestra pantalla es pequeña y para ver todo el ouput del comando se activa el comando paginador `less`
 
 Y según sé yo, con `less` podemos spawnear una shell:
