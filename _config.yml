@@ -151,7 +151,7 @@ footer:
       # url:
     - label: "HackTheBox"
       icon: "fas fa-regular fa-cube"
-      url: "https://www.hackthebox.com/profile/420035"
+      url: "https://labs.hackthebox.com/profile/420035"
 
 
 # Reading Files
