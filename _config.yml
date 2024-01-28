@@ -126,7 +126,7 @@ author:
       
     - label: "HackTheBox"
       icon: "fas fa-regular fa-cube"
-      url: "https://www.hackthebox.com/profile/420035"
+      url: "https://app.hackthebox.com/profile/420035"
 
 # Site Footer
 footer:
